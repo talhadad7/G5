@@ -71,6 +71,8 @@ namespace G5
             //   Application.Run(new Form1());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
+            Console.WriteLine("hello");
+
         }
     }
 }
