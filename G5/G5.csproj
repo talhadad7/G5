@@ -49,6 +49,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Member.cs" />
+    <Compile Include="Classes\Participant.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
