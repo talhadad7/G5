@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.EmergencyContact = new System.Windows.Forms.Label();
             this.Payment = new System.Windows.Forms.Label();
@@ -57,7 +58,9 @@
             this.Phone = new System.Windows.Forms.Label();
             this.EmailTXT = new System.Windows.Forms.TextBox();
             this.PhoneTXT = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SeniorityNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -258,7 +261,7 @@
             // 
             // EmerConTXT
             // 
-            this.EmerConTXT.Location = new System.Drawing.Point(21, 73);
+            this.EmerConTXT.Location = new System.Drawing.Point(21, 76);
             this.EmerConTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmerConTXT.Name = "EmerConTXT";
             this.EmerConTXT.Size = new System.Drawing.Size(220, 22);
@@ -319,11 +322,22 @@
             this.PhoneTXT.Size = new System.Drawing.Size(204, 22);
             this.PhoneTXT.TabIndex = 28;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(102, 56);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 360);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PhoneTXT);
             this.Controls.Add(this.EmailTXT);
             this.Controls.Add(this.Phone);
@@ -358,6 +372,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SeniorityNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +409,6 @@
         private System.Windows.Forms.Label Phone;
         private System.Windows.Forms.TextBox EmailTXT;
         private System.Windows.Forms.TextBox PhoneTXT;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

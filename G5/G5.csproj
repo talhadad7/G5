@@ -46,10 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgeGroup.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
+    <Compile Include="EventFile.cs" />
+    <Compile Include="EventLocation.cs" />
+    <Compile Include="EventType.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
