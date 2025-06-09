@@ -14,8 +14,7 @@ namespace G5
     public static class Program
     {
         public static System.Collections.Generic.List<Member> Members;
-        public static System.Collections.Generic.List<EventFile> EventFiles;
-        public static System.Collections.Generic.List<Activity> Activity;
+        public static System.Collections.Generic.List<Equipment> Equimpents;
 
         public static void InitMembers()
         {
@@ -67,7 +66,7 @@ namespace G5
         static void Main()
         {
             InitMembers();
-            InitParticipants();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
@@ -77,40 +76,6 @@ namespace G5
             Console.WriteLine("hello2");
             Console.WriteLine("hello3");
             Console.WriteLine("hello3");
-        }
-        public static List<Participant> Participants;
-        // 2. Add this method (you’ll need `using System.Data.SqlClient;` at top)
-        public static void InitParticipants()
-        {
-            var cmd = new SqlCommand("EXECUTE dbo.Get_all_Participants");
-            var sc = new SQL_CON();
-            SqlDataReader rdr = sc.execute_query(cmd);
-
-            Participants = new List<Participant>();
-
-            while (rdr.Read())
-            {
-                var gender = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr.GetValue(4).ToString());
-                var ageGroup = (AgeGroupLookup)Enum.Parse(typeof(AgeGroupLookup), rdr.GetValue(7).ToString());
-
-                Participants.Add(new Participant(
-                    rdr.GetValue(0).ToString(),   // participantID
-                    rdr.GetValue(1).ToString(),   // firstName
-                    rdr.GetValue(2).ToString(),   // lastName
-                    rdr.GetDateTime(3),           // birthDate
-                    gender,                       // gender
-                    rdr.GetDateTime(9),           // joinDate
-                    ageGroup,                     // ageGroup
-                    rdr.GetBoolean(8),            // paymentStatus
-                    rdr.IsDBNull(5) ? null : rdr.GetValue(5).ToString(),  // address
-                    rdr.GetValue(6).ToString(),                            // school
-                    rdr.IsDBNull(10) ? null : rdr.GetValue(10).ToString(), // emergencyContact
-                    rdr.IsDBNull(11) ? null : rdr.GetValue(11).ToString(), // medicalNotes
-                    false                         // isNew
-                ));
-            }
-
-            rdr.Close();
         }
     }
 }
