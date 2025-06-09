@@ -66,10 +66,10 @@ namespace G5
                 cmd.Parameters.AddWithValue("@startDate", this.startDate);
                 cmd.Parameters.AddWithValue("@targetAudience", this.targetAudience.ToString());
                 cmd.Parameters.AddWithValue("@location", this.location.ToString());
-            cmd.Parameters.AddWithValue("@numOfBuses", this.numOfBuses  );
-            cmd.Parameters.AddWithValue("@numOfParticipants", this.numOfParticipants);
-                cmd.Parameters.AddWithValue("@budget",this.budget );
-            cmd.Parameters.AddWithValue("@totalMoneySpent", this.totalMoneySpent);
+                cmd.Parameters.AddWithValue("@numOfBuses", (object?)this.numOfBuses ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@numOfParticipants", (object?)this.numOfParticipants ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@budget", (object?)this.budget ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@totalMoneySpent", (object?)this.totalMoneySpent ?? DBNull.Value);
 
                 var sc = new SQL_CON();
                 sc.execute_non_query(cmd);
