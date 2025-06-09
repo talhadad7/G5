@@ -46,13 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Activity.cs" />
+    <Compile Include="Classes\AgeGroup.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\EquipmentCategoryLookup.cs" />
     <Compile Include="Classes\EquipmentConditionLookup.cs" />
     <Compile Include="Classes\EquipmentLocationLookup.cs" />
     <Compile Include="Classes\Member.cs" />
+    <Compile Include="Classes\Participant.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
+    <Compile Include="EventFile.cs" />
+    <Compile Include="EventLocation.cs" />
+    <Compile Include="EventType.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
