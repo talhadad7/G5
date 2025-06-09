@@ -14,6 +14,7 @@ namespace G5
     public static class Program
     {
         public static System.Collections.Generic.List<Member> Members;
+        public static System.Collections.Generic.List<Equipment> Equimpents;
 
         public static void InitMembers()
         {
