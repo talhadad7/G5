@@ -8,62 +8,60 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-            public class Activity
+    public class Activity
+    {
+        private string activityID;
+        private DateTime creationDate;
+        private string title;
+        private string content;
+        private int? totalRank;
+        private Member writer;
+
+        public Activity(
+            string activityID,
+            DateTime creationDate,
+            string title,
+            string content,
+            Member writer,
+            int? totalRank = null,
+            bool isNew = false
+        )
         {
-            private string activityID;
-            private DateTime creationDate;
-            private string title;
-            private string content;
-            private int? totalRank;
-            private Member writer;
+            this.activityID = activityID;
+            this.creationDate = creationDate;
+            this.title = title;
+            this.content = content;
+            this.writer = writer;
+            this.totalRank = totalRank;
 
-            public Activity(
-                string activityID,
-                DateTime creationDate,
-                string title,
-                string content,
-                Member writer,
-                int? totalRank = null,
-                bool isNew = false
-            )
+            if (isNew)
             {
-                this.activityID = activityID;
-                this.creationDate = creationDate;
-                this.title = title;
-                this.content = content;
-                this.writer = writer;
-                this.totalRank = totalRank;
-
-                if (isNew)
-                {
-                    CreateActivity();
-                    Program.Activity.Add(this); // אם קיימת רשימה כזו
-                }
-            }
-
-            public void CreateActivity()
-            {
-                var cmd = new SqlCommand("CreateActivity")
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-
-                cmd.Parameters.AddWithValue("@activityID", this.activityID);
-                cmd.Parameters.AddWithValue("@creationDate", this.creationDate);
-                cmd.Parameters.AddWithValue("@title", this.title);
-                cmd.Parameters.AddWithValue("@content", this.content);
-                cmd.Parameters.AddWithValue("@writerID", this.writer.GetID());
-                cmd.Parameters.AddWithValue("@totalRank", (object)this.totalRank ?? DBNull.Value);
-
-                var sc = new SQL_CON();
-                sc.execute_non_query(cmd);
-            }
-
-            public string GetID()
-            {
-                return this.activityID;
+                CreateActivity();
+                Program.Activity.Add(this); // אם קיימת רשימה כזו
             }
         }
+
+        public void CreateActivity()
+        {
+            var cmd = new SqlCommand("CreateActivity")
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            cmd.Parameters.AddWithValue("@activityID", this.activityID);
+            cmd.Parameters.AddWithValue("@creationDate", this.creationDate);
+            cmd.Parameters.AddWithValue("@title", this.title);
+            cmd.Parameters.AddWithValue("@content", this.content);
+            cmd.Parameters.AddWithValue("@writerID", this.writer.GetID());
+            cmd.Parameters.AddWithValue("@totalRank", (object)this.totalRank ?? DBNull.Value);
+
+            var sc = new SQL_CON();
+            sc.execute_non_query(cmd);
+        }
+
+        public string GetID()
+        {
+            return this.activityID;
+        }
     }
-
-
+}

@@ -5,6 +5,7 @@ using System.Data.SqlClient;//חשוב!
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Windows.Forms;//עבור ההודעות!
 
@@ -14,8 +15,9 @@ namespace G5
     public static class Program
     {
         public static System.Collections.Generic.List<Member> Members;
+        public static System.Collections.Generic.List<Equipment> Equimpents;
         public static System.Collections.Generic.List<EventFile> EventFiles;
-        public static System.Collections.Generic.List<Activity> Activity;
+        public static System.Collections.Generic.List<Activity> Activities;
 
         public static void InitMembers()
         {
@@ -75,8 +77,9 @@ namespace G5
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
             Console.WriteLine("hello2");
-
-
+            Console.WriteLine("hello3");
+            Console.WriteLine("hello3");
+            Console.WriteLine("hello4");
         }
     }
 }

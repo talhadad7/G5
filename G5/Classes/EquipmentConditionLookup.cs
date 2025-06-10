@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace G5.Classes
+namespace G5
 {
-    internal class Participant
+    internal class EquipmentConditionLookup
     {
     }
 }

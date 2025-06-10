@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-    internal class Class1
+    internal class EquipmentCategoryLookup
     {
     }
 }

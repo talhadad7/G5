@@ -6,26 +6,23 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-        public class EventTypeLookup
+    public class EventTypeLookup
+    {
+        private string eventType;
+
+        public EventTypeLookup(string eventType)
         {
-            private string eventType;
+            this.eventType = eventType;
+        }
 
-            public EventTypeLookup(string eventType)
-            {
-                this.eventType = eventType;
-            }
+        public override string ToString()
+        {
+            return this.eventType;
+        }
 
-            public override string ToString()
-            {
-                return this.eventType;
-            }
-
-            public string GetEventType()
-            {
-                return this.eventType;
-            }
+        public string GetEventType()
+        {
+            return this.eventType;
         }
     }
-
-
-
+}
