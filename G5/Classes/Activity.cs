@@ -37,7 +37,7 @@ namespace G5
             if (isNew)
             {
                 CreateActivity();
-                Program.Activity.Add(this); // אם קיימת רשימה כזו
+                Program.Activities.Add(this); // אם קיימת רשימה כזו
             }
         }
 
