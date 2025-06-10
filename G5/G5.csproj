@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\AgeGroupLookup.cs" />
     <Compile Include="Classes\MemberTypeLookup.cs" />
