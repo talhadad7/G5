@@ -9,22 +9,20 @@ namespace G5
 
     public class AgeGroupLookup
     {
-        private string ageGroup;
-
-        public AgeGroupLookup(string ageGroup)
+        public enum AgeGroup
         {
-            this.ageGroup = ageGroup;
+            ThirdGrade,
+            FourthGrade,
+            FifthGrade,
+            SixthGrade,
+            SeventhGrade,
+            EighthGrade,
+            NinthGrade,
+            TenthGrade,
+            EleventhGrade,
+            TwelfthGrade
         }
 
-        public override string ToString()
-        {
-            return this.ageGroup;
-        }
-
-        public string GetAgeGroup()
-        {
-            return this.ageGroup;
-        }
     }
 }
 

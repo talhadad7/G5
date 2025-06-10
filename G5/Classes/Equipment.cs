@@ -47,7 +47,7 @@ namespace G5
             if (isNew)
             {
                 CreateEquipment();
-                Program.Equipments.Add(this);
+                Program.Equipment.Add(this);
             }
         }
 
