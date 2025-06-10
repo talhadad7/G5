@@ -28,50 +28,52 @@ namespace G5
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Members = new List<Member>();
+            Program.Members = new List<Member>();
 
             while (rdr.Read())
             {
                 // המרת מחרוזות לערכי enum
-                MemberTypeLookup mType = (MemberTypeLookup)Enum.Parse(typeof(MemberTypeLookup), rdr.GetValue(3).ToString());
-                GenderLookup gender = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr.GetValue(5).ToString());
+                MemberTypeLookup mType = (MemberTypeLookup)Enum.Parse(typeof(MemberTypeLookup), rdr["memberTypeName"].ToString());
+                GenderLookup gender = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr["genderName"].ToString());
 
                 // שדות אופציונליים
-                string address = rdr.IsDBNull(6) ? null : rdr.GetValue(6).ToString();
-                string emergencyContact = rdr.IsDBNull(7) ? null : rdr.GetValue(7).ToString();
-                bool paymentStatus = rdr.GetBoolean(8);
+                string address = rdr["address"] != DBNull.Value ? rdr["address"].ToString() : null;
+                string emergencyContact = rdr["emergencyContact"] != DBNull.Value ? rdr["emergencyContact"].ToString() : null;
+                bool paymentStatus = rdr["paymentStatus"] != DBNull.Value && (bool)rdr["paymentStatus"];
 
-                TrainingStatusLookup? TrainingStatus = rdr.IsDBNull(10)
-                    ? (TrainingStatusLookup?)null
-                    : (TrainingStatusLookup)Enum.Parse(typeof(TrainingStatusLookup), rdr.GetValue(10).ToString());
+                TrainingStatusLookup trainingStatus = rdr["trainingStatusName"] != DBNull.Value
+                    ? (TrainingStatusLookup)Enum.Parse(typeof(TrainingStatusLookup), rdr["trainingStatusName"].ToString())
+                    : TrainingStatusLookup.FirstInterview;
 
-                // שדות חדשים – NOT NULL
-                string phoneNumber = rdr.GetValue(12).ToString();  // עמודה 12
-                string emailAddress = rdr.GetValue(13).ToString(); // עמודה 13
+                // שדות חדשים (NOT NULL)
+                string phone = rdr["phone"].ToString();
+                string email = rdr["email"].ToString();
 
+                // יצירת מופע Member
                 Member m = new Member(
-                    rdr.GetValue(0).ToString(),   // id
-                    rdr.GetValue(1).ToString(),   // firstName
-                    rdr.GetValue(2).ToString(),   // lastName
-                    mType,                        // memberType
-                    rdr.GetDateTime(4),           // birthDate
-                    gender,                       // gender
-                    rdr.GetDateTime(9),           // joinDate
-                    rdr.GetInt32(11),             // seniority
-                    false,                        // isNew
-                    address,                      // address
-                    emergencyContact,             // emergencyContact
-                    paymentStatus,                // paymentStatus
-                    (TrainingStatusLookup)TrainingStatus, // trainingStatus
-                    phoneNumber,                  // phoneNumber ← חדש
-                    emailAddress                  // emailAddress ← חדש
+                    rdr["memberID"].ToString(),
+                    rdr["firstName"].ToString(),
+                    rdr["lastName"].ToString(),
+                    mType,
+                    (DateTime)rdr["birthDate"],
+                    gender,
+                    (DateTime)rdr["joinDate"],
+                    Convert.ToInt32(rdr["seniority"]),
+                    phone,
+                    email,
+                    isNew: false,
+                    address,
+                    emergencyContact,
+                    paymentStatus,
+                    trainingStatus
                 );
 
-                Members.Add(m);
+                Program.Members.Add(m);
             }
 
             rdr.Close();
         }
+
 
 
         public static void InitEventFiles()
