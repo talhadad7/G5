@@ -76,7 +76,7 @@
       <DependentUpon>G5DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Classes\Participant.cs" />
-    <Compile Include="GenderLookup.cs" />
+    <Compile Include="Classes\GenderLookup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\TrainingStatusLookup.cs" />
