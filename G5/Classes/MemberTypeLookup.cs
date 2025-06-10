@@ -14,24 +14,7 @@ namespace G5
         TechnicalCoordinator,    // 'Technical Coordinator' :contentReference[oaicite:3]{index=3}
         BranchCoordinator        // 'Branch Coordinator' :contentReference[oaicite:4]{index=4}
     }
-    public enum GenderLookup
-    {
-        Male,   // 'Male' :contentReference[oaicite:5]{index=5}
-        Female, // 'Female' :contentReference[oaicite:6]{index=6}
-        Other   // 'Other' :contentReference[oaicite:7]{index=7}
-    }
-    public enum TrainingStatusLookup
-    {
-        
-        FirstInterview,
-        SecondInterview,
-        ExperimentalActivity,
-        PlacementProcess,
-        Rejected,
-        Excepted,
-        Completed
-    }
-    internal class Enums
-    {
-    }
+   
+    
+    
 }

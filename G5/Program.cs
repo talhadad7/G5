@@ -18,6 +18,7 @@ namespace G5
         public static System.Collections.Generic.List<Equipment> Equimpents;
         public static System.Collections.Generic.List<EventFile> EventFiles;
         public static System.Collections.Generic.List<Activity> Activities;
+        public static System.Collections.Generic.List<Participant> Participants;
 
         public static void InitMembers()
         {

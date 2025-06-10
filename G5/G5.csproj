@@ -49,16 +49,15 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\AgeGroupLookup.cs" />
-    <Compile Include="Classes\Enums.cs" />
+    <Compile Include="Classes\MemberTypeLookup.cs" />
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\EquipmentCategoryLookup.cs" />
     <Compile Include="Classes\EquipmentConditionLookup.cs" />
     <Compile Include="Classes\EquipmentLocationLookup.cs" />
     <Compile Include="Classes\EventFile.cs" />
-    <Compile Include="Classes\EventLocation.cs" />
-    <Compile Include="Classes\EventType.cs" />
+    <Compile Include="Classes\EventLocationLookup.cs" />
+    <Compile Include="Classes\EventTypeLookup.cs" />
     <Compile Include="Classes\Member.cs" />
-    <Compile Include="Classes\Participant.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -71,8 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>G5DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Participant.cs" />
+    <Compile Include="GenderLookup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\TrainingStatusLookup.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
