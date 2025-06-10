@@ -10,18 +10,21 @@ namespace G5
 {
     public class Member
     {
-        private string memberID;
-        private string firstName;
-        private string lastName;
-        private MemberTypeLookup memberTypeName;
-        private DateTime birthDate;
-        private GenderLookup genderName;
-        private string address;
-        private string emergencyContact;
-        private bool paymentStatus;
-        private DateTime joinDate;
-        private TrainingStatusLookup trainingStatusName;
-        private int seniority;
+        public string memberID { get; private set; }
+        public string firstName { get; private set; }
+        public string lastName { get; private set; }
+        public MemberTypeLookup memberTypeName { get; private set; }
+        public DateTime birthDate { get; private set; }
+        public GenderLookup genderName { get; private set; }
+        public string address { get; private set; }
+        public string emergencyContact { get; private set; }
+        public bool paymentStatus { get; private set; }
+        public DateTime joinDate { get; private set; }
+        public TrainingStatusLookup trainingStatusName { get; private set; }
+        public int seniority { get; private set; }
+        public string phoneNumber { get; private set; }
+        public string emailAddress { get; private set; }
+
 
         // Primary constructor (for new or existing members)
         public Member(
@@ -33,6 +36,8 @@ namespace G5
             GenderLookup genderName,
             DateTime joinDate,
             int seniority,
+            string phone,
+            string email,
             bool isNew = false,
             string address = null,
             string emergencyContact = null,
@@ -40,6 +45,9 @@ namespace G5
             TrainingStatusLookup trainingStatusName = TrainingStatusLookup.FirstInterview
         )
         {
+            if (phone is null) throw new ArgumentNullException(nameof(phone));
+            if (email is null) throw new ArgumentNullException(nameof(email));
+
             this.memberID = id;
             this.firstName = firstName;
             this.lastName = lastName;
@@ -52,6 +60,8 @@ namespace G5
             this.joinDate = joinDate;
             this.trainingStatusName = trainingStatusName;
             this.seniority = seniority;
+            this.phoneNumber = phone;
+            this.emailAddress = email;
 
             if (isNew)
             {
@@ -79,9 +89,45 @@ namespace G5
             cmd.Parameters.AddWithValue("@joinDate", this.joinDate);
             cmd.Parameters.AddWithValue("@trainingStatusName", (object)this.trainingStatusName ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@seniority", this.seniority);
+            cmd.Parameters.AddWithValue("@phone", this.phoneNumber);
+            cmd.Parameters.AddWithValue("@email", this.emailAddress);
 
             var sc = new SQL_CON();
             sc.execute_non_query(cmd);
+        }
+        public static Member GetMemberByID(string id)
+        {
+            if (id is null) throw new ArgumentNullException(nameof(id));
+
+            var cmd = new SqlCommand("GetMemberByID") { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("@memberID", id);
+
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                // Map and return a new Member
+                return new Member(
+                    reader["memberID"].ToString(),
+                    reader["firstName"].ToString(),
+                    reader["lastName"].ToString(),
+                    (MemberTypeLookup)Enum.Parse(typeof(MemberTypeLookup), reader["memberTypeName"].ToString()),
+                    (DateTime)reader["birthDate"],
+                    (GenderLookup)Enum.Parse(typeof(GenderLookup), reader["genderName"].ToString()),
+                    (DateTime)reader["joinDate"],
+                    Convert.ToInt32(reader["seniority"]),
+                    reader["phone"].ToString(),
+                    reader["email"].ToString(),
+                    isNew: false,
+                    address: reader["address"] != DBNull.Value ? reader["address"].ToString() : null,
+                    emergencyContact: reader["emergencyContact"] != DBNull.Value ? reader["emergencyContact"].ToString() : null,
+                    paymentStatus: reader["paymentStatus"] != DBNull.Value && (bool)reader["paymentStatus"],
+                    trainingStatusName: reader["trainingStatusName"] != DBNull.Value
+                        ? (TrainingStatusLookup)Enum.Parse(typeof(TrainingStatusLookup), reader["trainingStatusName"].ToString())
+                        : TrainingStatusLookup.FirstInterview
+                );
+            }
+            Console.WriteLine($"Member with ID {id} not found.");
+            return null;
         }
         public String GetID()
         {
