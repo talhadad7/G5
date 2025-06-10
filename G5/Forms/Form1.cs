@@ -44,7 +44,7 @@ namespace G5
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
