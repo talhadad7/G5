@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-    internal class EquipmentLocationLookup
+    public class EquipmentLocationLookup
     {
+        public enum EquipmentLocation
+        {
+            warehouse1,
+            warehouse2,
+            warehouse3,
+        }
+
     }
 }

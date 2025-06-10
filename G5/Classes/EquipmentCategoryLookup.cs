@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-    internal class EquipmentCategoryLookup
+    public class EquipmentCategoryLookup
     {
+        public enum EquipmentType
+        {
+            OfficeEquipment,
+            CampingGear,
+            CleaningSupply,
+            KitchenSupply,
+            Electronics
+        }
     }
 }

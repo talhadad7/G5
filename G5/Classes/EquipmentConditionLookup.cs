@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-    internal class EquipmentConditionLookup
+    public class EquipmentConditionLookup
     {
+        public enum EquipmentCondition
+        {
+            Damaged,
+            Unuseable,
+            Standart,
+            UnderRepair,
+        }
     }
 }
