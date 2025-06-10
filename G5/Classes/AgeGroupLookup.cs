@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace G5
 {
-
-    public class AgeGroupLookup
+    public enum AgeGroupLookup
     {
-        public enum AgeGroup
-        {
-            ThirdGrade,
-            FourthGrade,
-            FifthGrade,
-            SixthGrade,
-            SeventhGrade,
-            EighthGrade,
-            NinthGrade,
-            TenthGrade,
-            EleventhGrade,
-            TwelfthGrade
-        }
-
+        ThirdGrade,
+        FourthGrade,
+        FifthGrade,
+        SixthGrade,
+        SeventhGrade,
+        EighthGrade,
+        NinthGrade,
+        TenthGrade,
+        EleventhGrade,
+        TwelfthGrade
     }
 }
+
 
