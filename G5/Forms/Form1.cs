@@ -37,22 +37,78 @@ namespace G5
 
         }
 
+        private void FirstNameTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastNameTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IDTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenderCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmerConTXT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void JoinDatePCK_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
+        private void MemberTypeCOMBOX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrainingProccessCombox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReturnFromCreateMember_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateMemberButton_Click(object sender, EventArgs e)
         {
 
         }
