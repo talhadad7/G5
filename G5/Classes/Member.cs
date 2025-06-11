@@ -99,7 +99,7 @@ namespace G5
         {
             if (id is null) throw new ArgumentNullException(nameof(id));
 
-            var cmd = new SqlCommand("GetMemberByID") { CommandType = CommandType.StoredProcedure };
+            var cmd = new SqlCommand("dbo.GetMemberByID") { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("@memberID", id);
 
             var reader = cmd.ExecuteReader();
