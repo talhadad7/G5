@@ -48,6 +48,10 @@
             this.colSeniority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmergencyContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrainingStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.g5DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
@@ -66,7 +70,7 @@
             // MemberByIDLabel
             // 
             this.MemberByIDLabel.AutoSize = true;
-            this.MemberByIDLabel.Location = new System.Drawing.Point(314, 39);
+            this.MemberByIDLabel.Location = new System.Drawing.Point(580, 48);
             this.MemberByIDLabel.Name = "MemberByIDLabel";
             this.MemberByIDLabel.Size = new System.Drawing.Size(82, 20);
             this.MemberByIDLabel.TabIndex = 1;
@@ -74,7 +78,7 @@
             // 
             // MemberSearchButton
             // 
-            this.MemberSearchButton.Location = new System.Drawing.Point(536, 173);
+            this.MemberSearchButton.Location = new System.Drawing.Point(956, 166);
             this.MemberSearchButton.Name = "MemberSearchButton";
             this.MemberSearchButton.Size = new System.Drawing.Size(114, 59);
             this.MemberSearchButton.TabIndex = 2;
@@ -118,13 +122,18 @@
             this.colJoinDate,
             this.colSeniority,
             this.colPhone,
-            this.colEmail});
-            this.dgvMembers.Location = new System.Drawing.Point(117, 268);
+            this.colEmail,
+            this.colAddress,
+            this.colEmergencyContact,
+            this.colPaymentStatus,
+            this.colTrainingStatus});
+            this.dgvMembers.Location = new System.Drawing.Point(32, 255);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.RowHeadersWidth = 62;
             this.dgvMembers.RowTemplate.Height = 28;
-            this.dgvMembers.Size = new System.Drawing.Size(567, 82);
+            this.dgvMembers.Size = new System.Drawing.Size(1137, 109);
             this.dgvMembers.TabIndex = 3;
+            this.dgvMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellContentClick);
             // 
             // colMemberID
             // 
@@ -204,11 +213,43 @@
             this.colEmail.ReadOnly = true;
             this.colEmail.Width = 150;
             // 
+            // colAddress
+            // 
+            this.colAddress.HeaderText = "Address";
+            this.colAddress.MinimumWidth = 8;
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            this.colAddress.Width = 150;
+            // 
+            // colEmergencyContact
+            // 
+            this.colEmergencyContact.HeaderText = "Emergency Contact";
+            this.colEmergencyContact.MinimumWidth = 8;
+            this.colEmergencyContact.Name = "colEmergencyContact";
+            this.colEmergencyContact.ReadOnly = true;
+            this.colEmergencyContact.Width = 150;
+            // 
+            // colPaymentStatus
+            // 
+            this.colPaymentStatus.HeaderText = "Payment Status";
+            this.colPaymentStatus.MinimumWidth = 8;
+            this.colPaymentStatus.Name = "colPaymentStatus";
+            this.colPaymentStatus.ReadOnly = true;
+            this.colPaymentStatus.Width = 150;
+            // 
+            // colTrainingStatus
+            // 
+            this.colTrainingStatus.HeaderText = "Training Status";
+            this.colTrainingStatus.MinimumWidth = 8;
+            this.colTrainingStatus.Name = "colTrainingStatus";
+            this.colTrainingStatus.ReadOnly = true;
+            this.colTrainingStatus.Width = 150;
+            // 
             // GetMemberByIDcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1201, 450);
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.MemberSearchButton);
             this.Controls.Add(this.MemberByIDLabel);
@@ -246,5 +287,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeniority;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmergencyContact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrainingStatus;
     }
 }

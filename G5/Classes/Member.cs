@@ -99,14 +99,23 @@ namespace G5
         {
             if (id is null) throw new ArgumentNullException(nameof(id));
 
-            var cmd = new SqlCommand("dbo.GetMemberByID") { CommandType = CommandType.StoredProcedure };
+            SqlCommand cmd = new SqlCommand("dbo.GetMemberByID") { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("@memberID", id);
 
-            var reader = cmd.ExecuteReader();
+            SQL_CON sql = new SQL_CON();
+            SqlDataReader reader = sql.execute_query(cmd);
+
+            if (reader == null)
+            {
+                Console.WriteLine("שגיאה בקריאה מהמסד.");
+                return null;
+            }
+
+            Member result = null;
+
             if (reader.Read())
             {
-                // Map and return a new Member
-                return new Member(
+                result = new Member(
                     reader["memberID"].ToString(),
                     reader["firstName"].ToString(),
                     reader["lastName"].ToString(),
@@ -126,8 +135,15 @@ namespace G5
                         : TrainingStatusLookup.FirstInterview
                 );
             }
-            Console.WriteLine($"Member with ID {id} not found.");
-            return null;
+
+            // סגור את ה־Reader וה־Connection
+            reader.Close();
+            cmd.Connection.Close();
+
+            if (result == null)
+                Console.WriteLine($"Member with ID {id} not found.");
+
+            return result;
         }
         public String GetID()
         {
