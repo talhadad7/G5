@@ -33,7 +33,6 @@ namespace G5
 
         private void ButtonClicked(object sender, EventArgs e)
         {
-            // 1. קבלת ה-ID מטקסטבוקס
             string id = MemberIDTXTBox.Text.Trim();
             if (string.IsNullOrEmpty(id))
             {
