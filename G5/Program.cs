@@ -46,8 +46,8 @@ namespace G5
                     : TrainingStatusLookup.FirstInterview;
 
                 // שדות חדשים (NOT NULL)
-                string phone = rdr["phoneNumber"].ToString();
-                string email = rdr["emailAddress"].ToString();
+                string phoneNumber = rdr["phoneNumber"].ToString();
+                string emailAddress = rdr["emailAddress"].ToString();
 
                 // יצירת מופע Member
                 Member m = new Member(
@@ -59,8 +59,8 @@ namespace G5
                     gender,
                     (DateTime)rdr["joinDate"],
                     Convert.ToInt32(rdr["seniority"]),
-                    phone,
-                    email,
+                    phoneNumber,
+                    emailAddress,
                     isNew: false,
                     address,
                     emergencyContact,
@@ -134,7 +134,8 @@ namespace G5
             {
                 // המרת מחרוזות לערכי enum בהתאם לטבלאות ה-Lookup
                 GenderLookup genderName = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr.GetValue(4).ToString());
-                AgeGroupLookup ageGroupName = (AgeGroupLookup)Enum.Parse(typeof(AgeGroupLookup), rdr.GetValue(7).ToString());
+                AgeGroupLookup ageGroup = (AgeGroupLookup)Enum.Parse(typeof(AgeGroupLookup), rdr.GetValue(7).ToString());
+
 
                 // שדות אופציונליים
                 string address = rdr.IsDBNull(5) ? null : rdr.GetValue(5).ToString();
@@ -151,7 +152,7 @@ namespace G5
                     (DateTime)rdr.GetValue(3),     // birthDate
                     genderName,                    // genderName
                     (DateTime)rdr.GetValue(8),     // joinDate
-                    ageGroupName,                  // ageGroupName
+                    ageGroup,                  // ageGroupName
                     paymentStatus,                 // paymentStatus
                     address,                       // address
                     school,                        // school
