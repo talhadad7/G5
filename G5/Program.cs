@@ -256,6 +256,7 @@ namespace G5
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Application.Run(new GetMemberByIDcs());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
