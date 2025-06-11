@@ -52,6 +52,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.PatricipantMedicalNotes = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ParticipantSchool = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SaveParticipantCreation
@@ -194,7 +196,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(254, 259);
+            this.label5.Location = new System.Drawing.Point(243, 293);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 25);
             this.label5.TabIndex = 16;
@@ -233,7 +235,7 @@
             // ParticipantPaymentStatusCheckBox
             // 
             this.ParticipantPaymentStatusCheckBox.AutoSize = true;
-            this.ParticipantPaymentStatusCheckBox.Location = new System.Drawing.Point(137, 259);
+            this.ParticipantPaymentStatusCheckBox.Location = new System.Drawing.Point(122, 281);
             this.ParticipantPaymentStatusCheckBox.Name = "ParticipantPaymentStatusCheckBox";
             this.ParticipantPaymentStatusCheckBox.Size = new System.Drawing.Size(28, 27);
             this.ParticipantPaymentStatusCheckBox.TabIndex = 21;
@@ -271,11 +273,30 @@
             this.PatricipantMedicalNotes.TabIndex = 25;
             this.PatricipantMedicalNotes.TextChanged += new System.EventHandler(this.PatricipantMedicalNotes_TextChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(311, 244);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 25);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "בית ספר";
+            // 
+            // ParticipantSchool
+            // 
+            this.ParticipantSchool.Location = new System.Drawing.Point(29, 244);
+            this.ParticipantSchool.Name = "ParticipantSchool";
+            this.ParticipantSchool.Size = new System.Drawing.Size(136, 31);
+            this.ParticipantSchool.TabIndex = 27;
+            this.ParticipantSchool.TextChanged += new System.EventHandler(this.ParticipantSchool_TextChanged);
+            // 
             // NewParticiapant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ParticipantSchool);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.PatricipantMedicalNotes);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
@@ -333,5 +354,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox PatricipantMedicalNotes;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox ParticipantSchool;
     }
 }

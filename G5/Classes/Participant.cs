@@ -69,10 +69,10 @@ namespace G5
             cmd.Parameters.AddWithValue("@firstName", this.firstName);
             cmd.Parameters.AddWithValue("@lastName", this.lastName);
             cmd.Parameters.AddWithValue("@birthDate", this.birthDate);
-            cmd.Parameters.AddWithValue("@genderName", this.genderName);
+            cmd.Parameters.AddWithValue("@gender", this.genderName.ToString());
             cmd.Parameters.AddWithValue("@address", (object)this.address ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@school", (object)this.school ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@ageGroupID", this.ageGroupName);
+            cmd.Parameters.AddWithValue("@ageGroupID", this.ageGroupName.ToString());
             cmd.Parameters.AddWithValue("@paymentStatus", this.paymentStatus);
             cmd.Parameters.AddWithValue("@joinDate", this.joinDate);
             cmd.Parameters.AddWithValue("@emergencyContact", (object)this.emergencyContact ?? DBNull.Value);

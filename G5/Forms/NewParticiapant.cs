@@ -15,7 +15,16 @@ namespace G5.Forms
         public NewParticiapant()
         {
             InitializeComponent();
-            ///
+            this.Load += NewParticiapant_Load;
+        }
+
+        private void NewParticiapant_Load(object sender, EventArgs e)
+        {
+            // Bind Gender dropdown to your enum
+            ParticipantGenderCombo.DataSource = Enum.GetValues(typeof(GenderLookup));
+
+            // Bind Age-Group dropdown to your enum
+            AgeGroupCombo.DataSource = Enum.GetValues(typeof(AgeGroupLookup));
         }
 
         private void ParticipantId_TextChanged(object sender, EventArgs e)
@@ -99,6 +108,91 @@ namespace G5.Forms
         }
 
         private void SaveParticipantCreation_Click(object sender, EventArgs e)
+        {
+            // 2.1 VALIDATION: now *all* fields except MedicalNotes must be non-empty
+            if (string.IsNullOrWhiteSpace(ParticipantId.Text) ||
+                string.IsNullOrWhiteSpace(ParticipantFirstName.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||               // last name
+                ParticipantGenderCombo.SelectedItem == null ||
+                AgeGroupCombo.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(ParticipantAdress.Text) ||
+                string.IsNullOrWhiteSpace(textBox1.Text) ||              // emergency contact
+                string.IsNullOrWhiteSpace(ParticipantSchool.Text))   // ← your new school box
+            {
+                MessageBox.Show(
+                    "אנא מלא/י את כל השדות (חוץ מהערות רפואיות).",
+                    "שגיאת אימות",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            try
+            {
+                // 2.2 READ & NORMALIZE
+                var id = ParticipantId.Text.Trim();
+                var firstName = ParticipantFirstName.Text.Trim();
+                var lastName = textBox3.Text.Trim();
+                var birthDate = ParticipantBirthDate.Value.Date;
+                var gender = (GenderLookup)ParticipantGenderCombo.SelectedItem;
+                var joinDate = ParticipantJoinDATE.Value.Date;
+                var ageGroup = (AgeGroupLookup)AgeGroupCombo.SelectedItem;
+                var paymentStatus = ParticipantPaymentStatusCheckBox.Checked;
+                var address = ParticipantAdress.Text.Trim();
+                var emergencyContact = textBox1.Text.Trim();
+
+                // **School** ← now comes from your new SchoolNameParticipant textbox
+                var school = ParticipantSchool.Text.Trim();
+
+                // 2.2.1 Medical notes still optional
+                var medicalNotes = string.IsNullOrWhiteSpace(PatricipantMedicalNotes.Text)
+                                        ? null
+                                        : PatricipantMedicalNotes.Text.Trim();
+
+                // 2.3 CREATE & PERSIST
+                var newParticipant = new Participant(
+                    id,
+                    firstName,
+                    lastName,
+                    birthDate,
+                    gender,
+                    joinDate,
+                    ageGroup,
+                    paymentStatus,
+                    address,
+                    school,          // ← wired in
+                    emergencyContact,
+                    medicalNotes,
+                    isNew: true
+                );
+
+                // 2.4 FEEDBACK & CLOSE
+                MessageBox.Show(
+                    "המשתתף נשמר בהצלחה!",
+                    "הצלחה",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "אירעה שגיאה בשמירה: " + ex.Message,
+                    "שגיאה",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private void SchoolNameParticipant_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParticipantSchool_TextChanged(object sender, EventArgs e)
         {
 
         }

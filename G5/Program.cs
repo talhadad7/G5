@@ -1,4 +1,5 @@
-﻿using System;
+﻿using G5.Forms;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;//חשוב!
@@ -267,6 +268,8 @@ namespace G5
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             Application.Run(new GetMemberByIDcs());
+             
+            Application.Run(new NewParticiapant());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
