@@ -65,16 +65,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(299, 28);
+            this.label1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(289, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.Size = new System.Drawing.Size(128, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "צור בוגר חדש";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // EmergencyContact
             // 
             this.EmergencyContact.AutoSize = true;
-            this.EmergencyContact.Location = new System.Drawing.Point(252, 63);
+            this.EmergencyContact.Location = new System.Drawing.Point(255, 107);
             this.EmergencyContact.Name = "EmergencyContact";
             this.EmergencyContact.Size = new System.Drawing.Size(91, 16);
             this.EmergencyContact.TabIndex = 1;
@@ -84,7 +87,7 @@
             // Payment
             // 
             this.Payment.AutoSize = true;
-            this.Payment.Location = new System.Drawing.Point(297, 87);
+            this.Payment.Location = new System.Drawing.Point(300, 131);
             this.Payment.Name = "Payment";
             this.Payment.Size = new System.Drawing.Size(46, 16);
             this.Payment.TabIndex = 2;
@@ -93,7 +96,7 @@
             // JoinDate
             // 
             this.JoinDate.AutoSize = true;
-            this.JoinDate.Location = new System.Drawing.Point(245, 116);
+            this.JoinDate.Location = new System.Drawing.Point(248, 160);
             this.JoinDate.Name = "JoinDate";
             this.JoinDate.Size = new System.Drawing.Size(98, 16);
             this.JoinDate.TabIndex = 3;
@@ -102,7 +105,7 @@
             // MemberType
             // 
             this.MemberType.AutoSize = true;
-            this.MemberType.Location = new System.Drawing.Point(278, 148);
+            this.MemberType.Location = new System.Drawing.Point(281, 192);
             this.MemberType.Name = "MemberType";
             this.MemberType.Size = new System.Drawing.Size(65, 16);
             this.MemberType.TabIndex = 4;
@@ -111,7 +114,7 @@
             // TrainingProccess
             // 
             this.TrainingProccess.AutoSize = true;
-            this.TrainingProccess.Location = new System.Drawing.Point(256, 174);
+            this.TrainingProccess.Location = new System.Drawing.Point(259, 218);
             this.TrainingProccess.Name = "TrainingProccess";
             this.TrainingProccess.Size = new System.Drawing.Size(87, 16);
             this.TrainingProccess.TabIndex = 5;
@@ -120,7 +123,7 @@
             // LastName
             // 
             this.LastName.AutoSize = true;
-            this.LastName.Location = new System.Drawing.Point(632, 87);
+            this.LastName.Location = new System.Drawing.Point(635, 131);
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(67, 16);
             this.LastName.TabIndex = 6;
@@ -129,7 +132,7 @@
             // PrivateName
             // 
             this.PrivateName.AutoSize = true;
-            this.PrivateName.Location = new System.Drawing.Point(645, 60);
+            this.PrivateName.Location = new System.Drawing.Point(648, 104);
             this.PrivateName.Name = "PrivateName";
             this.PrivateName.Size = new System.Drawing.Size(54, 16);
             this.PrivateName.TabIndex = 7;
@@ -138,7 +141,7 @@
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(623, 119);
+            this.ID.Location = new System.Drawing.Point(626, 163);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(76, 16);
             this.ID.TabIndex = 8;
@@ -147,7 +150,7 @@
             // BirthDate
             // 
             this.BirthDate.AutoSize = true;
-            this.BirthDate.Location = new System.Drawing.Point(623, 148);
+            this.BirthDate.Location = new System.Drawing.Point(626, 192);
             this.BirthDate.Name = "BirthDate";
             this.BirthDate.Size = new System.Drawing.Size(76, 16);
             this.BirthDate.TabIndex = 9;
@@ -157,7 +160,7 @@
             // Seniority
             // 
             this.Seniority.AutoSize = true;
-            this.Seniority.Location = new System.Drawing.Point(315, 198);
+            this.Seniority.Location = new System.Drawing.Point(318, 242);
             this.Seniority.Name = "Seniority";
             this.Seniority.Size = new System.Drawing.Size(28, 16);
             this.Seniority.TabIndex = 10;
@@ -166,7 +169,7 @@
             // Gender
             // 
             this.Gender.AutoSize = true;
-            this.Gender.Location = new System.Drawing.Point(663, 174);
+            this.Gender.Location = new System.Drawing.Point(666, 218);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(36, 16);
             this.Gender.TabIndex = 11;
@@ -175,7 +178,7 @@
             // Address
             // 
             this.Address.AutoSize = true;
-            this.Address.Location = new System.Drawing.Point(654, 198);
+            this.Address.Location = new System.Drawing.Point(657, 242);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(45, 16);
             this.Address.TabIndex = 12;
@@ -184,7 +187,7 @@
             // 
             // FirstNameTXT
             // 
-            this.FirstNameTXT.Location = new System.Drawing.Point(393, 57);
+            this.FirstNameTXT.Location = new System.Drawing.Point(396, 101);
             this.FirstNameTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstNameTXT.Name = "FirstNameTXT";
             this.FirstNameTXT.Size = new System.Drawing.Size(192, 22);
@@ -193,7 +196,7 @@
             // 
             // LastNameTXT
             // 
-            this.LastNameTXT.Location = new System.Drawing.Point(393, 83);
+            this.LastNameTXT.Location = new System.Drawing.Point(396, 127);
             this.LastNameTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LastNameTXT.Name = "LastNameTXT";
             this.LastNameTXT.Size = new System.Drawing.Size(192, 22);
@@ -202,7 +205,7 @@
             // 
             // IDTXT
             // 
-            this.IDTXT.Location = new System.Drawing.Point(393, 113);
+            this.IDTXT.Location = new System.Drawing.Point(396, 157);
             this.IDTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDTXT.Name = "IDTXT";
             this.IDTXT.Size = new System.Drawing.Size(192, 22);
@@ -211,7 +214,7 @@
             // 
             // AddressTXT
             // 
-            this.AddressTXT.Location = new System.Drawing.Point(390, 200);
+            this.AddressTXT.Location = new System.Drawing.Point(393, 244);
             this.AddressTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddressTXT.Name = "AddressTXT";
             this.AddressTXT.Size = new System.Drawing.Size(195, 22);
@@ -220,7 +223,7 @@
             // 
             // BirthDatePICK
             // 
-            this.BirthDatePICK.Location = new System.Drawing.Point(367, 143);
+            this.BirthDatePICK.Location = new System.Drawing.Point(370, 187);
             this.BirthDatePICK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BirthDatePICK.Name = "BirthDatePICK";
             this.BirthDatePICK.Size = new System.Drawing.Size(238, 22);
@@ -229,7 +232,7 @@
             // 
             // JoinDatePCK
             // 
-            this.JoinDatePCK.Location = new System.Drawing.Point(12, 111);
+            this.JoinDatePCK.Location = new System.Drawing.Point(15, 155);
             this.JoinDatePCK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JoinDatePCK.Name = "JoinDatePCK";
             this.JoinDatePCK.Size = new System.Drawing.Size(227, 22);
@@ -239,7 +242,7 @@
             // GenderCombo
             // 
             this.GenderCombo.FormattingEnabled = true;
-            this.GenderCombo.Location = new System.Drawing.Point(390, 171);
+            this.GenderCombo.Location = new System.Drawing.Point(393, 215);
             this.GenderCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GenderCombo.Name = "GenderCombo";
             this.GenderCombo.Size = new System.Drawing.Size(195, 24);
@@ -249,7 +252,7 @@
             // MemberTypeCOMBOX
             // 
             this.MemberTypeCOMBOX.FormattingEnabled = true;
-            this.MemberTypeCOMBOX.Location = new System.Drawing.Point(36, 143);
+            this.MemberTypeCOMBOX.Location = new System.Drawing.Point(39, 187);
             this.MemberTypeCOMBOX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MemberTypeCOMBOX.Name = "MemberTypeCOMBOX";
             this.MemberTypeCOMBOX.Size = new System.Drawing.Size(186, 24);
@@ -259,7 +262,7 @@
             // TrainingProccessCombox
             // 
             this.TrainingProccessCombox.FormattingEnabled = true;
-            this.TrainingProccessCombox.Location = new System.Drawing.Point(36, 171);
+            this.TrainingProccessCombox.Location = new System.Drawing.Point(39, 215);
             this.TrainingProccessCombox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TrainingProccessCombox.Name = "TrainingProccessCombox";
             this.TrainingProccessCombox.Size = new System.Drawing.Size(186, 24);
@@ -268,7 +271,7 @@
             // 
             // EmerConTXT
             // 
-            this.EmerConTXT.Location = new System.Drawing.Point(36, 57);
+            this.EmerConTXT.Location = new System.Drawing.Point(39, 101);
             this.EmerConTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmerConTXT.Name = "EmerConTXT";
             this.EmerConTXT.Size = new System.Drawing.Size(186, 22);
@@ -278,7 +281,7 @@
             // PaymentCHK
             // 
             this.PaymentCHK.AutoSize = true;
-            this.PaymentCHK.Location = new System.Drawing.Point(204, 86);
+            this.PaymentCHK.Location = new System.Drawing.Point(207, 130);
             this.PaymentCHK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PaymentCHK.Name = "PaymentCHK";
             this.PaymentCHK.Size = new System.Drawing.Size(18, 17);
@@ -288,7 +291,7 @@
             // 
             // SeniorityNumeric
             // 
-            this.SeniorityNumeric.Location = new System.Drawing.Point(36, 201);
+            this.SeniorityNumeric.Location = new System.Drawing.Point(39, 245);
             this.SeniorityNumeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SeniorityNumeric.Name = "SeniorityNumeric";
             this.SeniorityNumeric.Size = new System.Drawing.Size(186, 22);
@@ -298,7 +301,7 @@
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Location = new System.Drawing.Point(310, 226);
+            this.Email.Location = new System.Drawing.Point(313, 270);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(33, 16);
             this.Email.TabIndex = 25;
@@ -307,7 +310,7 @@
             // Phone
             // 
             this.Phone.AutoSize = true;
-            this.Phone.Location = new System.Drawing.Point(623, 226);
+            this.Phone.Location = new System.Drawing.Point(626, 270);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(73, 16);
             this.Phone.TabIndex = 26;
@@ -315,7 +318,7 @@
             // 
             // EmailTXT
             // 
-            this.EmailTXT.Location = new System.Drawing.Point(36, 226);
+            this.EmailTXT.Location = new System.Drawing.Point(39, 270);
             this.EmailTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmailTXT.Name = "EmailTXT";
             this.EmailTXT.Size = new System.Drawing.Size(186, 22);
@@ -324,7 +327,7 @@
             // 
             // PhoneTXT
             // 
-            this.PhoneTXT.Location = new System.Drawing.Point(390, 226);
+            this.PhoneTXT.Location = new System.Drawing.Point(393, 270);
             this.PhoneTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PhoneTXT.Name = "PhoneTXT";
             this.PhoneTXT.Size = new System.Drawing.Size(195, 22);
