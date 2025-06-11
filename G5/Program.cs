@@ -19,6 +19,7 @@ namespace G5
         public static System.Collections.Generic.List<EventFile> EventFiles;
         public static System.Collections.Generic.List<Activity> Activities;
         public static System.Collections.Generic.List<Participant> Participants;
+        public static System.Collections.Generic.List<TrainingContent> TrainingContents;
 
         public static void InitMembers()
         {
@@ -28,44 +29,53 @@ namespace G5
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Members = new List<Member>();
+            Program.Members = new List<Member>();
 
             while (rdr.Read())
             {
-                // המרת מחרוזות לערכי enum בהתאם לטבלאות ה-Lookup :contentReference[oaicite:1]{index=1}
-                MemberTypeLookup mType = (MemberTypeLookup)Enum.Parse(typeof(MemberTypeLookup), rdr.GetValue(3).ToString());
-                GenderLookup gender = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr.GetValue(5).ToString());
+                // המרת מחרוזות לערכי enum
+                MemberTypeLookup mType = (MemberTypeLookup)Enum.Parse(typeof(MemberTypeLookup), rdr["memberTypeName"].ToString());
+                GenderLookup gender = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr["genderName"].ToString());
 
                 // שדות אופציונליים
-                string address = rdr.IsDBNull(6) ? null : rdr.GetValue(6).ToString();
-                string emergencyContact = rdr.IsDBNull(7) ? null : rdr.GetValue(7).ToString();
-                bool paymentStatus = rdr.GetBoolean(8);
-                TrainingStatusLookup? TrainingStatus = rdr.IsDBNull(10)
-                    ? (TrainingStatusLookup?)null
-                    : (TrainingStatusLookup)Enum.Parse(typeof(TrainingStatusLookup), rdr.GetValue(10).ToString());
+                string address = rdr["address"] != DBNull.Value ? rdr["address"].ToString() : null;
+                string emergencyContact = rdr["emergencyContact"] != DBNull.Value ? rdr["emergencyContact"].ToString() : null;
+                bool paymentStatus = rdr["paymentStatus"] != DBNull.Value && (bool)rdr["paymentStatus"];
 
-                // יצירת מופע Member (ה-isNew יתמלא כברירת מחדל כ-false)
+                TrainingStatusLookup trainingStatus = rdr["trainingStatusName"] != DBNull.Value
+                    ? (TrainingStatusLookup)Enum.Parse(typeof(TrainingStatusLookup), rdr["trainingStatusName"].ToString())
+                    : TrainingStatusLookup.FirstInterview;
+
+                // שדות חדשים (NOT NULL)
+                string phone = rdr["phone"].ToString();
+                string email = rdr["email"].ToString();
+
+                // יצירת מופע Member
                 Member m = new Member(
-         rdr.GetValue(0).ToString(),   // id
-         rdr.GetValue(1).ToString(),   // firstName
-         rdr.GetValue(2).ToString(),   // lastName
-         mType,                        // memberType
-         rdr.GetDateTime(4),           // birthDate
-         gender,                       // gender
-         rdr.GetDateTime(9),           // joinDate  <–– כאן
-         rdr.GetInt32(11),             // seniority <–– וכאן
-         false,                        // isNew
-         address,                      // address
-         emergencyContact,             // emergencyContact
-         paymentStatus,                // paymentStatus
-         (TrainingStatusLookup) TrainingStatus                // trainingStatus
+                    rdr["memberID"].ToString(),
+                    rdr["firstName"].ToString(),
+                    rdr["lastName"].ToString(),
+                    mType,
+                    (DateTime)rdr["birthDate"],
+                    gender,
+                    (DateTime)rdr["joinDate"],
+                    Convert.ToInt32(rdr["seniority"]),
+                    phone,
+                    email,
+                    isNew: false,
+                    address,
+                    emergencyContact,
+                    paymentStatus,
+                    trainingStatus
      );
 
-                Members.Add(m);
+                Program.Members.Add(m);
             }
 
             rdr.Close();
         }
+
+
 
         public static void InitEventFiles()
         {
@@ -198,6 +208,39 @@ namespace G5
 
             rdr.Close();
         }
+        public static void InitTrainingContent()
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.Get_all_TrainingContent";  // ודאי שפרוצדורה כזו קיימת
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.execute_query(c);
+
+            TrainingContents = new List<TrainingContent>();
+
+            while (rdr.Read())
+            {
+                // המרת הטקסט לערך enum לפי הטבלה MemberTypeLookup
+                MemberTypeLookup targetAudience = (MemberTypeLookup)Enum.Parse(
+                    typeof(MemberTypeLookup),
+                    rdr.GetValue(2).ToString()
+                );
+
+                // יצירת מופע TrainingContent
+                TrainingContent tc = new TrainingContent(
+                    rdr.GetValue(0).ToString(),       // handoverID
+                    rdr.GetValue(1).ToString(),       // title
+                    targetAudience,                   // targetAudience (enum)
+                    rdr.GetDateTime(3),               // creationDate
+                    rdr.GetValue(4).ToString(),       // content
+                    false                             // isNew = false
+                );
+
+                TrainingContents.Add(tc);
+            }
+
+            rdr.Close();
+        }
+
 
 
 
@@ -208,6 +251,7 @@ namespace G5
             InitEventFiles();
             InitParticipants();
             InitActivities();
+            InitTrainingContent();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
