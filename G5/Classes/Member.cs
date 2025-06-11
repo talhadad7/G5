@@ -133,7 +133,45 @@ namespace G5
         {
             return this.memberID;
         }
+        public void UpdateMember()
+        {
+            var cmd = new SqlCommand("UpdateMember")
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@memberID", this.memberID);
+            cmd.Parameters.AddWithValue("@firstName", this.firstName);
+            cmd.Parameters.AddWithValue("@lastName", this.lastName);
+            cmd.Parameters.AddWithValue("@memberTypeName", this.memberTypeName.ToString());
+            cmd.Parameters.AddWithValue("@birthDate", this.birthDate);
+            cmd.Parameters.AddWithValue("@genderName", this.genderName.ToString());
+            cmd.Parameters.AddWithValue("@address", (object)this.address ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@emergencyContact", (object)this.emergencyContact ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@paymentStatus", this.paymentStatus);
+            cmd.Parameters.AddWithValue("@joinDate", this.joinDate);
+            cmd.Parameters.AddWithValue("@trainingStatusName", this.trainingStatusName.ToString());
+            cmd.Parameters.AddWithValue("@seniority", this.seniority);
+            cmd.Parameters.AddWithValue("@phoneNumber", this.phoneNumber);
+            cmd.Parameters.AddWithValue("@emailAddress", this.emailAddress);
+
+            var sc = new SQL_CON();
+            sc.execute_non_query(cmd);
+        }
+        public void DeleteMember()
+        {
+            var cmd = new SqlCommand("DeleteMember")
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@memberID", this.memberID);
+
+            var sc = new SQL_CON();
+            sc.execute_non_query(cmd);
+
+            Program.Members.Remove(this);
+        }
+
     }
-   
+
 
 }

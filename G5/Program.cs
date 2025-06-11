@@ -46,8 +46,8 @@ namespace G5
                     : TrainingStatusLookup.FirstInterview;
 
                 // שדות חדשים (NOT NULL)
-                string phone = rdr["phone"].ToString();
-                string email = rdr["email"].ToString();
+                string phoneNumber = rdr["phoneNumber"].ToString();
+                string emailAddress = rdr["emailAddress"].ToString();
 
                 // יצירת מופע Member
                 Member m = new Member(
@@ -59,8 +59,8 @@ namespace G5
                     gender,
                     (DateTime)rdr["joinDate"],
                     Convert.ToInt32(rdr["seniority"]),
-                    phone,
-                    email,
+                    phoneNumber,
+                    emailAddress,
                     isNew: false,
                     address,
                     emergencyContact,
@@ -134,7 +134,8 @@ namespace G5
             {
                 // המרת מחרוזות לערכי enum בהתאם לטבלאות ה-Lookup
                 GenderLookup genderName = (GenderLookup)Enum.Parse(typeof(GenderLookup), rdr.GetValue(4).ToString());
-                AgeGroupLookup ageGroupName = (AgeGroupLookup)Enum.Parse(typeof(AgeGroupLookup), rdr.GetValue(7).ToString());
+                AgeGroupLookup ageGroup = (AgeGroupLookup)Enum.Parse(typeof(AgeGroupLookup), rdr.GetValue(7).ToString());
+
 
                 // שדות אופציונליים
                 string address = rdr.IsDBNull(5) ? null : rdr.GetValue(5).ToString();
@@ -142,23 +143,33 @@ namespace G5
                 string emergencyContact = rdr.IsDBNull(9) ? null : rdr.GetValue(9).ToString();
                 string medicalNotes = rdr.IsDBNull(10) ? null : rdr.GetValue(10).ToString();
                 bool paymentStatus = rdr.IsDBNull(8) ? false : rdr.GetBoolean(8);
+                int birthDateIdx = rdr.GetOrdinal("birthDate");
+                int joinDateIdx = rdr.GetOrdinal("joinDate");
 
+                // 2. בדיקת DBNull ואז קריאה בטוחה
+                DateTime birthDate = rdr.IsDBNull(birthDateIdx)
+                    ? default(DateTime)
+                    : rdr.GetDateTime(birthDateIdx);
+
+                DateTime joinDate = rdr.IsDBNull(joinDateIdx)
+                    ? default(DateTime)
+                    : rdr.GetDateTime(joinDateIdx);
                 // יצירת מופע Participant
                 Participant p = new Participant(
-                    rdr.GetValue(0).ToString(),    // participantID
-                    rdr.GetValue(1).ToString(),    // firstName
-                    rdr.GetValue(2).ToString(),    // lastName
-                    (DateTime)rdr.GetValue(3),     // birthDate
-                    genderName,                    // genderName
-                    (DateTime)rdr.GetValue(8),     // joinDate
-                    ageGroupName,                  // ageGroupName
-                    paymentStatus,                 // paymentStatus
-                    address,                       // address
-                    school,                        // school
-                    emergencyContact,              // emergencyContact
-                    medicalNotes,                  // medicalNotes
-                    false                          // isNew
-                );
+        rdr.GetValue(0).ToString(),    // participantID
+        rdr.GetValue(1).ToString(),    // firstName
+        rdr.GetValue(2).ToString(),    // lastName
+        birthDate,                     // birthDate
+        genderName,                    // genderName
+        joinDate,                      // joinDate
+        ageGroup,                      // ageGroupName
+        paymentStatus,                 // paymentStatus
+        address,                       // address
+        school,                        // school
+        emergencyContact,              // emergencyContact
+        medicalNotes,                  // medicalNotes
+        false                          // isNew
+    );
 
                 Participants.Add(p);
             }
@@ -170,7 +181,7 @@ namespace G5
         {
             // בנייה של הפקודה לקריאת כל ה־Activities
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Activities";
+            c.CommandText = "EXECUTE dbo.Get_all_Activity";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
@@ -249,12 +260,13 @@ namespace G5
             InitMembers();
             InitEventFiles();
             InitParticipants();
-            InitActivities();
+           InitActivities();
             InitTrainingContent();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Application.Run(new GetMemberByIDcs());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
