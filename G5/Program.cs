@@ -46,8 +46,8 @@ namespace G5
                     : TrainingStatusLookup.FirstInterview;
 
                 // שדות חדשים (NOT NULL)
-                string phone = rdr["phone"].ToString();
-                string email = rdr["email"].ToString();
+                string phone = rdr["phoneNumber"].ToString();
+                string email = rdr["emailAddress"].ToString();
 
                 // יצירת מופע Member
                 Member m = new Member(
@@ -255,6 +255,7 @@ namespace G5
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Application.Run(new GetMemberByIDcs());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
