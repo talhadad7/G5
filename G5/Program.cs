@@ -23,9 +23,8 @@ namespace G5
 
         public static void InitMembers()
         {
-            // בנייה של הפקודה לקריאת כל ה־Members
             SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Members";  
+            c.CommandText = "EXECUTE dbo.Get_all_Members";
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
@@ -67,7 +66,7 @@ namespace G5
                     emergencyContact,
                     paymentStatus,
                     trainingStatus
-     );
+                );
 
                 Program.Members.Add(m);
             }
