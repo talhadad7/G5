@@ -9,7 +9,7 @@ namespace G5
     public enum AgeGroupLookup
     {
         ThirdGrade,
-        FourthGrade,
+        ForthGrade,
         FifthGrade,
         SixthGrade,
         SeventhGrade,
@@ -17,7 +17,7 @@ namespace G5
         NinthGrade,
         TenthGrade,
         EleventhGrade,
-        TwelfthGrade
+        TwelvthGrade
     }
 }
 
