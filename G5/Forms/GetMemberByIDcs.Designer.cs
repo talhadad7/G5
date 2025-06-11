@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MemberIDTXTBox = new System.Windows.Forms.TextBox();
             this.MemberByIDLabel = new System.Windows.Forms.Label();
             this.MemberSearchButton = new System.Windows.Forms.Button();
+            this.g5DataSet = new G5.G5DataSet();
+            this.participantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.participantsTableAdapter = new G5.G5DataSetTableAdapters.ParticipantsTableAdapter();
+            this.membersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.membersTableAdapter = new G5.G5DataSetTableAdapters.MembersTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.g5DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MemberIDTXTBox
@@ -61,6 +70,29 @@
             this.MemberSearchButton.UseVisualStyleBackColor = true;
             this.MemberSearchButton.Click += new System.EventHandler(this.ButtonClicked);
             // 
+            // g5DataSet
+            // 
+            this.g5DataSet.DataSetName = "G5DataSet";
+            this.g5DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // participantsBindingSource
+            // 
+            this.participantsBindingSource.DataMember = "Participants";
+            this.participantsBindingSource.DataSource = this.g5DataSet;
+            // 
+            // participantsTableAdapter
+            // 
+            this.participantsTableAdapter.ClearBeforeFill = true;
+            // 
+            // membersBindingSource
+            // 
+            this.membersBindingSource.DataMember = "Members";
+            this.membersBindingSource.DataSource = this.g5DataSet;
+            // 
+            // membersTableAdapter
+            // 
+            this.membersTableAdapter.ClearBeforeFill = true;
+            // 
             // GetMemberByIDcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -72,6 +104,9 @@
             this.Name = "GetMemberByIDcs";
             this.Text = "GetMemberByIDcs";
             this.Load += new System.EventHandler(this.GetMemberByIDcs_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.g5DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +117,10 @@
         private System.Windows.Forms.TextBox MemberIDTXTBox;
         private System.Windows.Forms.Label MemberByIDLabel;
         private System.Windows.Forms.Button MemberSearchButton;
+        private G5DataSet g5DataSet;
+        private System.Windows.Forms.BindingSource participantsBindingSource;
+        private G5DataSetTableAdapters.ParticipantsTableAdapter participantsTableAdapter;
+        private System.Windows.Forms.BindingSource membersBindingSource;
+        private G5DataSetTableAdapters.MembersTableAdapter membersTableAdapter;
     }
 }

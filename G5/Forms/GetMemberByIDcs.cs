@@ -19,6 +19,10 @@ namespace G5
 
         private void GetMemberByIDcs_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'g5DataSet.Members' table. You can move, or remove it, as needed.
+            this.membersTableAdapter.Fill(this.g5DataSet.Members);
+            // TODO: This line of code loads data into the 'g5DataSet.Participants' table. You can move, or remove it, as needed.
+            this.participantsTableAdapter.Fill(this.g5DataSet.Participants);
 
         }
 
@@ -75,6 +79,11 @@ namespace G5
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void ShowParticipant_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
