@@ -278,22 +278,14 @@ namespace G5
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //  Application.Run(new Form1());
-            //  Application.Run(new GetMemberByIDcs());
-            // Application.Run(new DeleteMemberForm());
-            //   Application.Run(new NewMemberForm());
-            // Application.Run(new UpdateMember());
-            Application.Run(new DeleteParticipant());
-
-
-            // Application.Run(new NewParticipantForm1());
-            foreach (Member m in Members)
-                Debug.WriteLine($"{m.GetID()}");
-            Console.WriteLine("hello");
-            Console.WriteLine("hello2");
-            Console.WriteLine("hello3");
-            Console.WriteLine("hello3");
-            Console.WriteLine("hello4");
+            //Application.Run(new Form1());
+            //Application.Run(new GetMemberByIDcs());
+            //Application.Run(new DeleteMemberForm());
+            //Application.Run(new NewMemberForm());
+            //Application.Run(new UpdateMember());
+            //Application.Run(new DeleteParticipant());
+            Application.Run(new NewParticipantForm1());
+           
         }
     }
 }
