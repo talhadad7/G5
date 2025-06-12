@@ -11,19 +11,19 @@ namespace G5
     public class Member
     {
         public string memberID { get; private set; }
-        public string firstName { get; private set; }
-        public string lastName { get; private set; }
-        public MemberTypeLookup memberTypeName { get; private set; }
-        public DateTime birthDate { get; private set; }
-        public GenderLookup genderName { get; private set; }
-        public string address { get; private set; }
-        public string emergencyContact { get; private set; }
-        public bool paymentStatus { get; private set; }
-        public DateTime joinDate { get; private set; }
-        public TrainingStatusLookup trainingStatusName { get; private set; }
-        public int seniority { get; private set; }
-        public string phoneNumber { get; private set; }
-        public string emailAddress { get; private set; }
+        public string firstName { get;  set; }
+        public string lastName { get; set; }
+        public MemberTypeLookup memberTypeName { get; set; }
+        public DateTime birthDate { get; set; }
+        public GenderLookup genderName { get; set; }
+        public string address { get; set; }
+        public string emergencyContact { get; set; }
+        public bool paymentStatus { get; set; }
+        public DateTime joinDate { get; set; }
+        public TrainingStatusLookup trainingStatusName { get; set; }
+        public int seniority { get; set; }
+        public string phoneNumber { get; set; }
+        public string emailAddress { get; set; }
 
 
         // Primary constructor (for new or existing members)

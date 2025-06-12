@@ -283,7 +283,7 @@ namespace G5
             // Application.Run(new DeleteMemberForm());
             Application.Run(new NewMemberForm());
 
-        //    Application.Run(new NewParticipantForm1());
+        // Application.Run(new NewParticipantForm1());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
