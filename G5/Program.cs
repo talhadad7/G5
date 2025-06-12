@@ -255,7 +255,16 @@ namespace G5
         {
             return Program.Members.FirstOrDefault(m => m.memberID == id);
         }
-
+        public static bool DeleteMemberFromList(string id)
+        {
+            Member m = Members.FirstOrDefault(mem => mem.memberID == id);
+            if (m != null)
+            {
+                Members.Remove(m);
+                return true;
+            }
+            return false;
+        }
 
 
         [STAThread]
@@ -269,10 +278,12 @@ namespace G5
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          //  Application.Run(new Form1());
-            Application.Run(new GetMemberByIDcs());
-             
-            Application.Run(new NewParticiapant());
+            //  Application.Run(new Form1());
+            //  Application.Run(new GetMemberByIDcs());
+            // Application.Run(new DeleteMemberForm());
+            Application.Run(new NewMemberForm());
+
+        //    Application.Run(new NewParticipantForm1());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");

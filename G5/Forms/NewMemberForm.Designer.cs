@@ -1,6 +1,6 @@
 ﻿namespace G5
 {
-    partial class Form1
+    partial class NewMemberForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,21 +45,21 @@
             this.LastNameTXT = new System.Windows.Forms.TextBox();
             this.IDTXT = new System.Windows.Forms.TextBox();
             this.AddressTXT = new System.Windows.Forms.TextBox();
-            this.BirthDatePICK = new System.Windows.Forms.DateTimePicker();
+            this.BirthDatePicker = new System.Windows.Forms.DateTimePicker();
             this.JoinDatePCK = new System.Windows.Forms.DateTimePicker();
             this.GenderCombo = new System.Windows.Forms.ComboBox();
             this.MemberTypeCOMBOX = new System.Windows.Forms.ComboBox();
             this.TrainingProccessCombox = new System.Windows.Forms.ComboBox();
             this.EmerConTXT = new System.Windows.Forms.TextBox();
-            this.PaymentCHK = new System.Windows.Forms.CheckBox();
-            this.SeniorityNumeric = new System.Windows.Forms.NumericUpDown();
+            this.PaymentCheckBox = new System.Windows.Forms.CheckBox();
+            this.SeniorityNum = new System.Windows.Forms.NumericUpDown();
             this.Email = new System.Windows.Forms.Label();
             this.Phone = new System.Windows.Forms.Label();
-            this.EmailTXT = new System.Windows.Forms.TextBox();
+            this.MailTXT = new System.Windows.Forms.TextBox();
             this.PhoneTXT = new System.Windows.Forms.TextBox();
             this.CreateMemberButton = new System.Windows.Forms.Button();
             this.ReturnFromCreateMember = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.SeniorityNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeniorityNum)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +69,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(289, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.Size = new System.Drawing.Size(151, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "צור בוגר חדש";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -221,14 +221,14 @@
             this.AddressTXT.TabIndex = 16;
             this.AddressTXT.TextChanged += new System.EventHandler(this.AddressTXT_TextChanged);
             // 
-            // BirthDatePICK
+            // BirthDatePicker
             // 
-            this.BirthDatePICK.Location = new System.Drawing.Point(370, 187);
-            this.BirthDatePICK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BirthDatePICK.Name = "BirthDatePICK";
-            this.BirthDatePICK.Size = new System.Drawing.Size(267, 26);
-            this.BirthDatePICK.TabIndex = 17;
-            this.BirthDatePICK.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.BirthDatePicker.Location = new System.Drawing.Point(370, 187);
+            this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BirthDatePicker.Name = "BirthDatePicker";
+            this.BirthDatePicker.Size = new System.Drawing.Size(267, 26);
+            this.BirthDatePicker.TabIndex = 17;
+            this.BirthDatePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // JoinDatePCK
             // 
@@ -278,25 +278,25 @@
             this.EmerConTXT.TabIndex = 22;
             this.EmerConTXT.TextChanged += new System.EventHandler(this.EmerConTXT_TextChanged);
             // 
-            // PaymentCHK
+            // PaymentCheckBox
             // 
-            this.PaymentCHK.AutoSize = true;
-            this.PaymentCHK.Location = new System.Drawing.Point(207, 130);
-            this.PaymentCHK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PaymentCHK.Name = "PaymentCHK";
-            this.PaymentCHK.Size = new System.Drawing.Size(22, 21);
-            this.PaymentCHK.TabIndex = 23;
-            this.PaymentCHK.UseVisualStyleBackColor = true;
-            this.PaymentCHK.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.PaymentCheckBox.AutoSize = true;
+            this.PaymentCheckBox.Location = new System.Drawing.Point(207, 130);
+            this.PaymentCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PaymentCheckBox.Name = "PaymentCheckBox";
+            this.PaymentCheckBox.Size = new System.Drawing.Size(22, 21);
+            this.PaymentCheckBox.TabIndex = 23;
+            this.PaymentCheckBox.UseVisualStyleBackColor = true;
+            this.PaymentCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // SeniorityNumeric
+            // SeniorityNum
             // 
-            this.SeniorityNumeric.Location = new System.Drawing.Point(39, 245);
-            this.SeniorityNumeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SeniorityNumeric.Name = "SeniorityNumeric";
-            this.SeniorityNumeric.Size = new System.Drawing.Size(209, 26);
-            this.SeniorityNumeric.TabIndex = 24;
-            this.SeniorityNumeric.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.SeniorityNum.Location = new System.Drawing.Point(39, 245);
+            this.SeniorityNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SeniorityNum.Name = "SeniorityNum";
+            this.SeniorityNum.Size = new System.Drawing.Size(209, 26);
+            this.SeniorityNum.TabIndex = 24;
+            this.SeniorityNum.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // Email
             // 
@@ -316,14 +316,14 @@
             this.Phone.TabIndex = 26;
             this.Phone.Text = "מספר טלפון";
             // 
-            // EmailTXT
+            // MailTXT
             // 
-            this.EmailTXT.Location = new System.Drawing.Point(39, 270);
-            this.EmailTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.EmailTXT.Name = "EmailTXT";
-            this.EmailTXT.Size = new System.Drawing.Size(209, 26);
-            this.EmailTXT.TabIndex = 27;
-            this.EmailTXT.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.MailTXT.Location = new System.Drawing.Point(39, 270);
+            this.MailTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MailTXT.Name = "MailTXT";
+            this.MailTXT.Size = new System.Drawing.Size(209, 26);
+            this.MailTXT.TabIndex = 27;
+            this.MailTXT.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // PhoneTXT
             // 
@@ -356,7 +356,7 @@
             this.ReturnFromCreateMember.UseVisualStyleBackColor = true;
             this.ReturnFromCreateMember.Click += new System.EventHandler(this.ReturnFromCreateMember_Click);
             // 
-            // Form1
+            // NewMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -364,17 +364,17 @@
             this.Controls.Add(this.ReturnFromCreateMember);
             this.Controls.Add(this.CreateMemberButton);
             this.Controls.Add(this.PhoneTXT);
-            this.Controls.Add(this.EmailTXT);
+            this.Controls.Add(this.MailTXT);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.Email);
-            this.Controls.Add(this.SeniorityNumeric);
-            this.Controls.Add(this.PaymentCHK);
+            this.Controls.Add(this.SeniorityNum);
+            this.Controls.Add(this.PaymentCheckBox);
             this.Controls.Add(this.EmerConTXT);
             this.Controls.Add(this.TrainingProccessCombox);
             this.Controls.Add(this.MemberTypeCOMBOX);
             this.Controls.Add(this.GenderCombo);
             this.Controls.Add(this.JoinDatePCK);
-            this.Controls.Add(this.BirthDatePICK);
+            this.Controls.Add(this.BirthDatePicker);
             this.Controls.Add(this.AddressTXT);
             this.Controls.Add(this.IDTXT);
             this.Controls.Add(this.LastNameTXT);
@@ -393,10 +393,10 @@
             this.Controls.Add(this.EmergencyContact);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "NewMemberForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SeniorityNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeniorityNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,17 +421,17 @@
         private System.Windows.Forms.TextBox LastNameTXT;
         private System.Windows.Forms.TextBox IDTXT;
         private System.Windows.Forms.TextBox AddressTXT;
-        private System.Windows.Forms.DateTimePicker BirthDatePICK;
+        private System.Windows.Forms.DateTimePicker BirthDatePicker;
         private System.Windows.Forms.DateTimePicker JoinDatePCK;
         private System.Windows.Forms.ComboBox GenderCombo;
         private System.Windows.Forms.ComboBox MemberTypeCOMBOX;
         private System.Windows.Forms.ComboBox TrainingProccessCombox;
         private System.Windows.Forms.TextBox EmerConTXT;
-        private System.Windows.Forms.CheckBox PaymentCHK;
-        private System.Windows.Forms.NumericUpDown SeniorityNumeric;
+        private System.Windows.Forms.CheckBox PaymentCheckBox;
+        private System.Windows.Forms.NumericUpDown SeniorityNum;
         private System.Windows.Forms.Label Email;
         private System.Windows.Forms.Label Phone;
-        private System.Windows.Forms.TextBox EmailTXT;
+        private System.Windows.Forms.TextBox MailTXT;
         private System.Windows.Forms.TextBox PhoneTXT;
         private System.Windows.Forms.Button CreateMemberButton;
         private System.Windows.Forms.Button ReturnFromCreateMember;
