@@ -7,6 +7,25 @@ namespace G5.Forms
     {
         private TextBox idTextBox, firstNameTextBox, lastNameTextBox, addressTextBox,
                         emergencyContactTextBox, medicalNotesTextBox, schoolTextBox;
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // NewParticipantForm1
+            // 
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Name = "NewParticipantForm1";
+            this.Load += new System.EventHandler(this.NewParticipantForm1_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void NewParticipantForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private DateTimePicker birthDatePicker, joinDatePicker;
         private ComboBox genderCombo, ageGroupCombo;
         private CheckBox paymentCheckBox;

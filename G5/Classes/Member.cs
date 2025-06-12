@@ -36,8 +36,8 @@ namespace G5
             GenderLookup genderName,
             DateTime joinDate,
             int seniority,
-            string phone,
-            string email,
+            string phoneNumber,
+            string emailAddress,
             bool isNew = false,
             string address = null,
             string emergencyContact = null,
@@ -45,8 +45,8 @@ namespace G5
             TrainingStatusLookup trainingStatusName = TrainingStatusLookup.FirstInterview
         )
         {
-            if (phone is null) throw new ArgumentNullException(nameof(phone));
-            if (email is null) throw new ArgumentNullException(nameof(email));
+            if (phoneNumber is null) throw new ArgumentNullException(nameof(phoneNumber));
+            if (emailAddress is null) throw new ArgumentNullException(nameof(emailAddress));
 
             this.memberID = id;
             this.firstName = firstName;
@@ -60,8 +60,8 @@ namespace G5
             this.joinDate = joinDate;
             this.trainingStatusName = trainingStatusName;
             this.seniority = seniority;
-            this.phoneNumber = phone;
-            this.emailAddress = email;
+            this.phoneNumber = phoneNumber;
+            this.emailAddress = emailAddress;
 
             if (isNew)
             {
@@ -80,17 +80,17 @@ namespace G5
             cmd.Parameters.AddWithValue("@memberID", this.memberID);
             cmd.Parameters.AddWithValue("@firstName", this.firstName);
             cmd.Parameters.AddWithValue("@lastName", this.lastName);
-            cmd.Parameters.AddWithValue("@memberTypeName", this.memberTypeName);
+            cmd.Parameters.AddWithValue("@memberTypeName", this.memberTypeName.ToString());
             cmd.Parameters.AddWithValue("@birthDate", this.birthDate);
-            cmd.Parameters.AddWithValue("@genderName", this.genderName);
+            cmd.Parameters.AddWithValue("@genderName", this.genderName.ToString());
             cmd.Parameters.AddWithValue("@address", (object)this.address ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@emergencyContact", (object)this.emergencyContact ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@paymentStatus", this.paymentStatus);
             cmd.Parameters.AddWithValue("@joinDate", this.joinDate);
-            cmd.Parameters.AddWithValue("@trainingStatusName", (object)this.trainingStatusName ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@trainingStatusName", this.trainingStatusName.ToString());
             cmd.Parameters.AddWithValue("@seniority", this.seniority);
-            cmd.Parameters.AddWithValue("@phone", this.phoneNumber);
-            cmd.Parameters.AddWithValue("@email", this.emailAddress);
+            cmd.Parameters.AddWithValue("@phoneNumber", this.phoneNumber);
+            cmd.Parameters.AddWithValue("@emailAddress", this.emailAddress);
 
             var sc = new SQL_CON();
             sc.execute_non_query(cmd);

@@ -15,13 +15,10 @@ namespace G5
         public NewMemberForm()
         {
             InitializeComponent();
-
-            // טעינת קומבובוקסים
             GenderCombo.DataSource = Enum.GetValues(typeof(GenderLookup));
             MemberTypeCOMBOX.DataSource = Enum.GetValues(typeof(MemberTypeLookup));
             TrainingProccessCombox.DataSource = Enum.GetValues(typeof(TrainingStatusLookup));
         }
-
         private void label2_Click(object sender, EventArgs e) { }
         private void Form1_Load(object sender, EventArgs e) { }
         private void label10_Click(object sender, EventArgs e) { }
@@ -49,6 +46,7 @@ namespace G5
 
         private void CreateMemberButton_Click(object sender, EventArgs e)
         {
+            // ולידציה בסיסית
             if (string.IsNullOrWhiteSpace(IDTXT.Text) ||
                 string.IsNullOrWhiteSpace(FirstNameTXT.Text) ||
                 string.IsNullOrWhiteSpace(LastNameTXT.Text) ||
@@ -64,7 +62,7 @@ namespace G5
 
             try
             {
-                Member m = new Member(
+                var member = new Member(
                     id: IDTXT.Text.Trim(),
                     firstName: FirstNameTXT.Text.Trim(),
                     lastName: LastNameTXT.Text.Trim(),
@@ -73,8 +71,8 @@ namespace G5
                     genderName: (GenderLookup)GenderCombo.SelectedItem,
                     joinDate: JoinDatePCK.Value.Date,
                     seniority: (int)SeniorityNum.Value,
-                    phone: PhoneTXT.Text.Trim(),
-                    email: MailTXT.Text.Trim(),
+                    phoneNumber: PhoneTXT.Text.Trim(),
+                    emailAddress: MailTXT.Text.Trim(),
                     isNew: true,
                     address: string.IsNullOrWhiteSpace(AddressTXT.Text) ? null : AddressTXT.Text.Trim(),
                     emergencyContact: string.IsNullOrWhiteSpace(EmerConTXT.Text) ? null : EmerConTXT.Text.Trim(),
@@ -90,5 +88,7 @@ namespace G5
                 MessageBox.Show($"אירעה שגיאה:\n{ex.Message}", "שגיאה", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+      
     }
 }
