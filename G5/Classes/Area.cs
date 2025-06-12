@@ -11,7 +11,7 @@ namespace G5
         // Properties
         public string AreaID { get; set; }
         public string AreaName { get; set; }
-        public double Size { get; set; }
+        public int Size { get; set; }  
         public bool IsAvailable { get; set; }
 
         // Constructor
@@ -19,7 +19,7 @@ namespace G5
         {
             AreaID = areaID;
             AreaName = areaName;
-            Size = size;
+            Size = (int)size;
             IsAvailable = isAvailable;
         }
 
