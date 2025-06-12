@@ -1,6 +1,6 @@
 ﻿namespace G5.Forms
 {
-    partial class NewParticiapant
+    partial class NewParticiapantbackup
     {
         /// <summary>
         /// Required designer variable.

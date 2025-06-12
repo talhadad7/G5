@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace G5.Forms
 {
-    public partial class NewParticiapant : Form
+    public partial class NewParticiapantbackup : Form
     {
-        public NewParticiapant()
+        public NewParticiapantbackup()
         {
             InitializeComponent();
-            this.Load += NewParticiapant_Load;
+        //    this.Load += NewParticiapant_Load;
         }
 
         private void NewParticiapant_Load(object sender, EventArgs e)
@@ -116,8 +116,8 @@ namespace G5.Forms
                 ParticipantGenderCombo.SelectedItem == null ||
                 AgeGroupCombo.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(ParticipantAdress.Text) ||
-                string.IsNullOrWhiteSpace(textBox1.Text) ||              // emergency contact
-                string.IsNullOrWhiteSpace(ParticipantSchool.Text))   // ← your new school box
+               string.IsNullOrWhiteSpace(textBox1.Text)  )             // emergency contact
+           //     string.IsNullOrWhiteSpace(ParticipantSchool.Text))   // ← your new school box
             {
                 MessageBox.Show(
                     "אנא מלא/י את כל השדות (חוץ מהערות רפואיות).",
@@ -143,7 +143,7 @@ namespace G5.Forms
                 var emergencyContact = textBox1.Text.Trim();
 
                 // **School** ← now comes from your new SchoolNameParticipant textbox
-                var school = ParticipantSchool.Text.Trim();
+                //var school = ParticipantSchool.Text.Trim();
 
                 // 2.2.1 Medical notes still optional
                 var medicalNotes = string.IsNullOrWhiteSpace(PatricipantMedicalNotes.Text)
@@ -161,7 +161,7 @@ namespace G5.Forms
                     ageGroup,
                     paymentStatus,
                     address,
-                    school,          // ← wired in
+             //       school,          // ← wired in
                     emergencyContact,
                     medicalNotes,
                     isNew: true
@@ -188,10 +188,10 @@ namespace G5.Forms
             }
         }
 
-        private void NewParticiapant_Load(object sender, EventArgs e)
-        {
+        //private void NewParticiapant_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void NewParticiapant_Load_1(object sender, EventArgs e)
         {
