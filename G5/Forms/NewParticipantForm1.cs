@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace G5.Forms
 {
-    public class NewParticipantForm : Form
+    public class NewParticipantForm1 : Form
     {
         private TextBox idTextBox, firstNameTextBox, lastNameTextBox, addressTextBox,
                         emergencyContactTextBox, medicalNotesTextBox, schoolTextBox;
@@ -12,7 +12,7 @@ namespace G5.Forms
         private CheckBox paymentCheckBox;
         private Button saveButton, cancelButton;
 
-        public NewParticipantForm()
+        public NewParticipantForm1()
         {
             this.Text = "יצירת משתתף חדש";
             this.Width = 500;

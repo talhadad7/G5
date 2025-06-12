@@ -1,6 +1,6 @@
 ﻿namespace G5
 {
-    partial class Form1
+    partial class NewMemberForm
     {
         /// <summary>
         /// Required designer variable.
