@@ -89,5 +89,10 @@ namespace G5
         {
             this.Close();
         }
+
+        private void IDTXTBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

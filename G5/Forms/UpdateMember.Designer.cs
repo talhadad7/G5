@@ -78,6 +78,7 @@
             this.IDTXTBox.Size = new System.Drawing.Size(200, 26);
             this.IDTXTBox.TabIndex = 2;
             this.IDTXTBox.Text = "נא להזין ת\"ז";
+            this.IDTXTBox.TextChanged += new System.EventHandler(this.IDTXTBox_TextChanged);
             // 
             // SearchButton
             // 

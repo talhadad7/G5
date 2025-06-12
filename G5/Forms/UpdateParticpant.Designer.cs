@@ -173,6 +173,7 @@
             this.PaymentCheck.Size = new System.Drawing.Size(22, 21);
             this.PaymentCheck.TabIndex = 13;
             this.PaymentCheck.UseVisualStyleBackColor = true;
+            this.PaymentCheck.CheckedChanged += new System.EventHandler(this.PaymentCheck_CheckedChanged);
             // 
             // GenderCombo
             // 
@@ -181,6 +182,7 @@
             this.GenderCombo.Name = "GenderCombo";
             this.GenderCombo.Size = new System.Drawing.Size(121, 28);
             this.GenderCombo.TabIndex = 14;
+            this.GenderCombo.SelectedIndexChanged += new System.EventHandler(this.GenderCombo_SelectedIndexChanged);
             // 
             // AgeGroupCombo
             // 
@@ -189,6 +191,7 @@
             this.AgeGroupCombo.Name = "AgeGroupCombo";
             this.AgeGroupCombo.Size = new System.Drawing.Size(121, 28);
             this.AgeGroupCombo.TabIndex = 15;
+            this.AgeGroupCombo.SelectedIndexChanged += new System.EventHandler(this.AgeGroupCombo_SelectedIndexChanged);
             // 
             // BirthDatePick
             // 
@@ -196,6 +199,7 @@
             this.BirthDatePick.Name = "BirthDatePick";
             this.BirthDatePick.Size = new System.Drawing.Size(245, 26);
             this.BirthDatePick.TabIndex = 16;
+            this.BirthDatePick.ValueChanged += new System.EventHandler(this.BirthDatePick_ValueChanged);
             // 
             // JoinDatePick
             // 
@@ -203,6 +207,7 @@
             this.JoinDatePick.Name = "JoinDatePick";
             this.JoinDatePick.Size = new System.Drawing.Size(203, 26);
             this.JoinDatePick.TabIndex = 17;
+            this.JoinDatePick.ValueChanged += new System.EventHandler(this.JoinDatePick_ValueChanged);
             // 
             // IDtxtbox
             // 
@@ -211,6 +216,7 @@
             this.IDtxtbox.Size = new System.Drawing.Size(158, 26);
             this.IDtxtbox.TabIndex = 18;
             this.IDtxtbox.Text = "נא להזין ת\"ז";
+            this.IDtxtbox.TextChanged += new System.EventHandler(this.IDtxtbox_TextChanged);
             // 
             // FirstNameTxtBox
             // 
@@ -218,6 +224,7 @@
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
             this.FirstNameTxtBox.Size = new System.Drawing.Size(176, 26);
             this.FirstNameTxtBox.TabIndex = 19;
+            this.FirstNameTxtBox.TextChanged += new System.EventHandler(this.FirstNameTxtBox_TextChanged);
             // 
             // LastNameTxtBox
             // 
@@ -225,6 +232,7 @@
             this.LastNameTxtBox.Name = "LastNameTxtBox";
             this.LastNameTxtBox.Size = new System.Drawing.Size(185, 26);
             this.LastNameTxtBox.TabIndex = 20;
+            this.LastNameTxtBox.TextChanged += new System.EventHandler(this.LastNameTxtBox_TextChanged);
             // 
             // AddressTxtBox
             // 
@@ -232,6 +240,7 @@
             this.AddressTxtBox.Name = "AddressTxtBox";
             this.AddressTxtBox.Size = new System.Drawing.Size(141, 26);
             this.AddressTxtBox.TabIndex = 21;
+            this.AddressTxtBox.TextChanged += new System.EventHandler(this.AddressTxtBox_TextChanged);
             // 
             // PhoneTxtBox
             // 
@@ -239,6 +248,7 @@
             this.PhoneTxtBox.Name = "PhoneTxtBox";
             this.PhoneTxtBox.Size = new System.Drawing.Size(178, 26);
             this.PhoneTxtBox.TabIndex = 22;
+            this.PhoneTxtBox.TextChanged += new System.EventHandler(this.PhoneTxtBox_TextChanged);
             // 
             // EmergencyTxtBox
             // 
@@ -246,6 +256,7 @@
             this.EmergencyTxtBox.Name = "EmergencyTxtBox";
             this.EmergencyTxtBox.Size = new System.Drawing.Size(141, 26);
             this.EmergencyTxtBox.TabIndex = 23;
+            this.EmergencyTxtBox.TextChanged += new System.EventHandler(this.EmergencyTxtBox_TextChanged);
             // 
             // MedicalNotesTxtBox
             // 
@@ -253,6 +264,7 @@
             this.MedicalNotesTxtBox.Name = "MedicalNotesTxtBox";
             this.MedicalNotesTxtBox.Size = new System.Drawing.Size(153, 26);
             this.MedicalNotesTxtBox.TabIndex = 24;
+            this.MedicalNotesTxtBox.TextChanged += new System.EventHandler(this.MedicalNotesTxtBox_TextChanged);
             // 
             // SearchButton
             // 
@@ -262,6 +274,7 @@
             this.SearchButton.TabIndex = 25;
             this.SearchButton.Text = "חיפוש";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SaveButton
             // 
@@ -271,6 +284,7 @@
             this.SaveButton.TabIndex = 26;
             this.SaveButton.Text = "שמירה";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CancelButton
             // 
@@ -280,6 +294,7 @@
             this.CancelButton.TabIndex = 27;
             this.CancelButton.Text = "ביטול";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // UpdateParticpant
             // 

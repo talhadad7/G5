@@ -78,5 +78,10 @@ namespace G5
                 MessageBox.Show($"אירעה שגיאה במחיקה: {ex.Message}", "שגיאה", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void DeleteParticipant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
