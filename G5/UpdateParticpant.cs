@@ -16,5 +16,15 @@ namespace G5
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateParticpant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

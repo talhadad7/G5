@@ -133,6 +133,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdateParticpant.resx">
+      <DependentUpon>UpdateParticpant.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="G5DataSet.xsc">
       <DependentUpon>G5DataSet.xsd</DependentUpon>
     </None>
