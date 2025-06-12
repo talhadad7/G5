@@ -251,6 +251,80 @@ namespace G5
 
             rdr.Close();
         }
+
+
+        public static List<Area> Areas = new List<Area>();
+
+        public static void InitAreas()
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.Get_all_Areas";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.execute_query(c);
+
+            Areas = new List<Area>();
+
+            while (rdr.Read())
+            {
+                int size = rdr.IsDBNull(2) ? 0 : Convert.ToInt32(rdr.GetValue(2));
+                bool isAvailable = rdr.IsDBNull(3) ? true : (bool)rdr.GetValue(3);
+
+                Area a = new Area(
+                    rdr.GetValue(0).ToString(),
+                    rdr.GetValue(1).ToString(),
+                    size,
+                    isAvailable
+                );
+
+                Areas.Add(a);
+            }
+
+            rdr.Close();
+            c.Connection?.Close();  // מומלץ
+        }
+
+        public static List<Announcement> Announcements = new List<Announcement>();
+
+        public static void InitAnnouncements()
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.Get_all_Announcements";  // ודאי שה-SP קיים
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.execute_query(c);
+
+            Announcements = new List<Announcement>();
+
+            while (rdr.Read())
+            {
+                string messageID = rdr.GetValue(0).ToString();
+                string title = rdr.GetValue(1).ToString();
+                string content = rdr.GetValue(2).ToString();
+                DateTime publishDate = rdr.GetDateTime(3);
+                string audience = rdr.GetValue(4).ToString();
+                string writerID = rdr.GetValue(5).ToString();
+
+                // שליפת האובייקט Member לפי ה-ID
+                Member writer = Program.Members.FirstOrDefault(m => m.GetID() == writerID);
+
+                // יצירת מופע Announcement
+                Announcement a = new Announcement(
+                    messageID,
+                    title,
+                    content,
+                    publishDate,
+                    audience,
+                    writer
+                );
+
+                Announcements.Add(a);
+            }
+
+            rdr.Close();
+            c.Connection?.Close();  // סגירת connection אם נדרש
+        }
+
+
+
         public static Member FindMemberInMemory(string id)
         {
             return Program.Members.FirstOrDefault(m => m.memberID == id);
