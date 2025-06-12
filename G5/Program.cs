@@ -280,9 +280,9 @@ namespace G5
             Application.SetCompatibleTextRenderingDefault(false);
           //  Application.Run(new Form1());
           //  Application.Run(new GetMemberByIDcs());
-            Application.Run(new DeleteMemberForm());
+           // Application.Run(new DeleteMemberForm());
 
-        //    Application.Run(new NewParticiapant());
+        Application.Run(new NewParticipantForm());
             foreach (Member m in Members)
                 Debug.WriteLine($"{m.GetID()}");
             Console.WriteLine("hello");
