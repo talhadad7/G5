@@ -81,7 +81,21 @@ namespace G5
             var sc = new SQL_CON();
             sc.execute_non_query(cmd);
         }
+        public void DeleteParticipant()
+        {
+            SqlCommand cmd = new SqlCommand("dbo.DeleteParticipant")
+            {
+                CommandType = CommandType.StoredProcedure
+            };
 
+            cmd.Parameters.AddWithValue("@participantID", this.participantID);
+
+            SQL_CON sc = new SQL_CON();
+            sc.execute_non_query(cmd);
+
+            // הסרה מהזיכרון, אם קיים
+            Program.Participants.Remove(this);
+        }
         public string GetID() => this.participantID;
     }
 }

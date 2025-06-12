@@ -63,6 +63,12 @@
     <Compile Include="Forms\DeleteMemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\DeleteParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteParticipant.Designer.cs">
+      <DependentUpon>DeleteParticipant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewMemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +101,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\TrainingStatusLookup.cs" />
     <Compile Include="Classes\TrainingContent.cs" />
+    <Compile Include="UpdateParticpant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateParticpant.Designer.cs">
+      <DependentUpon>UpdateParticpant.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\DeleteMemberForm.resx">
       <DependentUpon>DeleteMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteParticipant.resx">
+      <DependentUpon>DeleteParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewMemberForm.resx">
       <DependentUpon>NewMemberForm.cs</DependentUpon>
