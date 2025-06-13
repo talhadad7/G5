@@ -21,6 +21,8 @@ namespace G5
         public static System.Collections.Generic.List<Activity> Activities;
         public static System.Collections.Generic.List<Participant> Participants;
         public static System.Collections.Generic.List<TrainingContent> TrainingContents;
+        public static List<Area> Areas = new List<Area>();
+        public static List<Announcement> Announcements = new List<Announcement>();
 
 
         public static void InitMembers()
@@ -179,45 +181,31 @@ namespace G5
 
         public static void InitActivities()
         {
-            // בנייה של הפקודה לקריאת כל ה־Activities
-            SqlCommand c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_all_Activity";
+            SqlCommand c = new SqlCommand("EXECUTE dbo.Get_all_Activity");
             SQL_CON SC = new SQL_CON();
             SqlDataReader rdr = SC.execute_query(c);
 
-            Activities = new List<Activity>();
+            Program.Activities = new List<Activity>();
 
             while (rdr.Read())
             {
-                // מציאת ה־Member (הכותב) לפי ה־ID
-                string writerID = rdr.GetValue(4).ToString();
-                Member writer = Program.Members.FirstOrDefault(m => m.GetID() == writerID);
+                string activityID = rdr.GetValue(0).ToString();
+                DateTime creationDate = (DateTime)rdr.GetValue(1);
+                string title = rdr.GetValue(2).ToString();
+                string content = rdr.GetValue(3).ToString();
 
-                if (writer == null)
-                {
-                    // אפשר להוסיף כאן הודעת שגיאה או להמשיך ללא כותב
-                    continue;
-                }
+                // totalRank יכול להיות NULL, נשתמש ב־Nullable
+                double? totalRank = rdr.IsDBNull(4) ? (double?)null : Convert.ToDouble(rdr.GetValue(4));
+                string writerID = rdr.GetValue(5).ToString();
 
-                // שדה אופציונלי
-                int? totalRank = rdr.IsDBNull(5) ? null : (int?)rdr.GetValue(5);
-
-                // יצירת מופע Activity
-                Activity a = new Activity(
-                    rdr.GetValue(0).ToString(),    // activityID
-                    (DateTime)rdr.GetValue(1),     // creationDate
-                    rdr.GetValue(2).ToString(),    // title
-                    rdr.GetValue(3).ToString(),    // content
-                    writer,                        // writer
-                    totalRank,                     // totalRank
-                    false                          // isNew
-                );
-
-                Activities.Add(a);
+                Activity a = new Activity(activityID, creationDate, title, content,  writerID, totalRank);
+                Program.Activities.Add(a);
             }
 
             rdr.Close();
+            c.Connection?.Close();
         }
+
         public static void InitTrainingContent()
         {
             SqlCommand c = new SqlCommand();
@@ -316,10 +304,12 @@ namespace G5
             rdr.Close();
             c.Connection?.Close();  // סגירת connection אם נדרש
         }
+        
         public static Member FindMemberInMemory(string id)
         {
             return Program.Members.FirstOrDefault(m => m.memberID == id);
         }
+        
         public static bool DeleteMemberFromList(string id)
         {
             Member m = Members.FirstOrDefault(mem => mem.memberID == id);
@@ -341,10 +331,9 @@ namespace G5
            InitActivities();
             InitTrainingContent();
             InitAreas();
-            Console.WriteLine("== רשימת אזורים ==");
-            foreach (Area a in Areas)
+            foreach (var activity in Program.Activities)
             {
-                Console.WriteLine(a); // בגלל שהגדרת override ל־ToString, זה יציג בצורה קריאה
+                Console.WriteLine($"Activity ID: {activity.activityID}");
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
