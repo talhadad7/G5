@@ -12,9 +12,9 @@ namespace G5
         public string tagType { get; set; }
 
         // Constructor
-        public Tag(string tagType)
+        public Tag(string tagType1)
         {
-            tagType = tagType;
+            this.tagType = tagType1;
         }
 
         // Optional: override ToString for debugging / display

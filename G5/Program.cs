@@ -23,8 +23,26 @@ namespace G5
         public static System.Collections.Generic.List<TrainingContent> TrainingContents;
         public static List<Area> Areas = new List<Area>();
         public static List<Announcement> Announcements = new List<Announcement>();
+        public static System.Collections.Generic.List<Tag> Tags;
+        public static Member CurrentUser { get; set; }
 
+        public static void InitTags()
+        {
+            var cmd = new System.Data.SqlClient.SqlCommand("SELECT tagType FROM Tags");
+            SQL_CON sc = new SQL_CON();
+            var rdr = sc.execute_query(cmd);
 
+            Program.Tags = new List<Tag>();
+
+            while (rdr.Read())
+            {
+                Tag t = new Tag(rdr.GetString(0));
+                Program.Tags.Add(t);
+            }
+
+            rdr.Close();
+            cmd.Connection?.Close();
+        }
         public static void InitMembers()
         {
             SqlCommand c = new SqlCommand();
@@ -331,10 +349,8 @@ namespace G5
            InitActivities();
             InitTrainingContent();
             InitAreas();
-            foreach (var activity in Program.Activities)
-            {
-                Console.WriteLine($"Activity ID: {activity.activityID}");
-            }
+            InitTags();
+        
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
@@ -345,8 +361,11 @@ namespace G5
             //Application.Run(new DeleteParticipant());
             // Application.Run(new NewParticipantForm1());
             // Application.Run(new UpdateParticpant());
-          //  Application.Run(new ViewParticipant());
+            //  Application.Run(new ViewParticipant());
+            //   Application.Run(new CreateActivityForm());
+            Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
 
+          
         }
     }
 }
