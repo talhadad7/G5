@@ -22,6 +22,7 @@ namespace G5
         public static System.Collections.Generic.List<Participant> Participants;
         public static System.Collections.Generic.List<TrainingContent> TrainingContents;
 
+
         public static void InitMembers()
         {
             SqlCommand c = new SqlCommand();
@@ -349,7 +350,12 @@ namespace G5
             InitParticipants();
            InitActivities();
             InitTrainingContent();
-
+            InitAreas();
+            Console.WriteLine("== רשימת אזורים ==");
+            foreach (Area a in Areas)
+            {
+                Console.WriteLine(a); // בגלל שהגדרת override ל־ToString, זה יציג בצורה קריאה
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
@@ -360,7 +366,7 @@ namespace G5
             //Application.Run(new DeleteParticipant());
             // Application.Run(new NewParticipantForm1());
             // Application.Run(new UpdateParticpant());
-            Application.Run(new ViewParticipant());
+          //  Application.Run(new ViewParticipant());
 
         }
     }
