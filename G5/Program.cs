@@ -76,8 +76,6 @@ namespace G5
             rdr.Close();
         }
 
-
-
         public static void InitEventFiles()
         {
             // בנייה של הפקודה לקריאת כל ה־EventFiles
@@ -253,9 +251,6 @@ namespace G5
             rdr.Close();
         }
 
-
-        public static List<Area> Areas = new List<Area>();
-
         public static void InitAreas()
         {
             SqlCommand c = new SqlCommand();
@@ -283,8 +278,6 @@ namespace G5
             rdr.Close();
             c.Connection?.Close();  // מומלץ
         }
-
-        public static List<Announcement> Announcements = new List<Announcement>();
 
         public static void InitAnnouncements()
         {
@@ -323,9 +316,6 @@ namespace G5
             rdr.Close();
             c.Connection?.Close();  // סגירת connection אם נדרש
         }
-
-
-
         public static Member FindMemberInMemory(string id)
         {
             return Program.Members.FirstOrDefault(m => m.memberID == id);
