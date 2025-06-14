@@ -60,9 +60,10 @@
             // 
             // MemberIDTXTBox
             // 
-            this.MemberIDTXTBox.Location = new System.Drawing.Point(137, 182);
+            this.MemberIDTXTBox.Location = new System.Drawing.Point(183, 228);
+            this.MemberIDTXTBox.Margin = new System.Windows.Forms.Padding(4);
             this.MemberIDTXTBox.Name = "MemberIDTXTBox";
-            this.MemberIDTXTBox.Size = new System.Drawing.Size(144, 26);
+            this.MemberIDTXTBox.Size = new System.Drawing.Size(191, 31);
             this.MemberIDTXTBox.TabIndex = 0;
             this.MemberIDTXTBox.Text = "נא להכניס תז";
             this.MemberIDTXTBox.TextChanged += new System.EventHandler(this.IDInserted);
@@ -70,17 +71,19 @@
             // MemberByIDLabel
             // 
             this.MemberByIDLabel.AutoSize = true;
-            this.MemberByIDLabel.Location = new System.Drawing.Point(580, 48);
+            this.MemberByIDLabel.Location = new System.Drawing.Point(773, 60);
+            this.MemberByIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MemberByIDLabel.Name = "MemberByIDLabel";
-            this.MemberByIDLabel.Size = new System.Drawing.Size(82, 20);
+            this.MemberByIDLabel.Size = new System.Drawing.Size(110, 25);
             this.MemberByIDLabel.TabIndex = 1;
             this.MemberByIDLabel.Text = "חיפוש בוגר";
             // 
             // MemberSearchButton
             // 
-            this.MemberSearchButton.Location = new System.Drawing.Point(956, 166);
+            this.MemberSearchButton.Location = new System.Drawing.Point(1275, 208);
+            this.MemberSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.MemberSearchButton.Name = "MemberSearchButton";
-            this.MemberSearchButton.Size = new System.Drawing.Size(114, 59);
+            this.MemberSearchButton.Size = new System.Drawing.Size(152, 74);
             this.MemberSearchButton.TabIndex = 2;
             this.MemberSearchButton.Text = "חיפוש";
             this.MemberSearchButton.UseVisualStyleBackColor = true;
@@ -127,11 +130,12 @@
             this.colEmergencyContact,
             this.colPaymentStatus,
             this.colTrainingStatus});
-            this.dgvMembers.Location = new System.Drawing.Point(32, 255);
+            this.dgvMembers.Location = new System.Drawing.Point(43, 319);
+            this.dgvMembers.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.RowHeadersWidth = 62;
             this.dgvMembers.RowTemplate.Height = 28;
-            this.dgvMembers.Size = new System.Drawing.Size(1137, 109);
+            this.dgvMembers.Size = new System.Drawing.Size(1516, 136);
             this.dgvMembers.TabIndex = 3;
             this.dgvMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellContentClick);
             // 
@@ -247,13 +251,14 @@
             // 
             // GetMemberByIDcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 450);
+            this.ClientSize = new System.Drawing.Size(1601, 562);
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.MemberSearchButton);
             this.Controls.Add(this.MemberByIDLabel);
             this.Controls.Add(this.MemberIDTXTBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GetMemberByIDcs";
             this.Text = "GetMemberByIDcs";
             this.Load += new System.EventHandler(this.GetMemberByIDcs_Load);

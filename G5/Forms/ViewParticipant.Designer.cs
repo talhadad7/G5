@@ -58,17 +58,19 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(340, 44);
+            this.label14.Location = new System.Drawing.Point(453, 55);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 20);
+            this.label14.Size = new System.Drawing.Size(103, 25);
             this.label14.TabIndex = 1;
             this.label14.Text = "הצגת חניך";
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(597, 87);
+            this.SearchButton.Location = new System.Drawing.Point(796, 109);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(117, 32);
+            this.SearchButton.Size = new System.Drawing.Size(156, 40);
             this.SearchButton.TabIndex = 37;
             this.SearchButton.Text = "חיפוש";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -77,207 +79,230 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(195, 383);
+            this.label26.Location = new System.Drawing.Point(260, 479);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(53, 20);
+            this.label26.Size = new System.Drawing.Size(70, 25);
             this.label26.TabIndex = 36;
             this.label26.Text = "תשלום";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(195, 337);
+            this.label25.Location = new System.Drawing.Point(260, 421);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(108, 20);
+            this.label25.Size = new System.Drawing.Size(145, 25);
             this.label25.TabIndex = 35;
             this.label25.Text = "הערות רפואיות";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(179, 274);
+            this.label24.Location = new System.Drawing.Point(239, 342);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 20);
+            this.label24.Size = new System.Drawing.Size(56, 25);
             this.label24.TabIndex = 34;
             this.label24.Text = "כיתה";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(192, 208);
+            this.label23.Location = new System.Drawing.Point(256, 260);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(110, 20);
+            this.label23.Size = new System.Drawing.Size(146, 25);
             this.label23.TabIndex = 33;
             this.label23.Text = "איש קשר חירום";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(209, 155);
+            this.label22.Location = new System.Drawing.Point(279, 194);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(63, 20);
+            this.label22.Size = new System.Drawing.Size(86, 25);
             this.label22.TabIndex = 32;
             this.label22.Text = "בית ספר";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(188, 94);
+            this.label21.Location = new System.Drawing.Point(251, 118);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 20);
+            this.label21.Size = new System.Drawing.Size(68, 25);
             this.label21.TabIndex = 31;
             this.label21.Text = "כתובת";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(593, 182);
+            this.label20.Location = new System.Drawing.Point(791, 228);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(81, 20);
+            this.label20.Size = new System.Drawing.Size(110, 25);
             this.label20.TabIndex = 30;
             this.label20.Text = "שם משפחה";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(577, 335);
+            this.label19.Location = new System.Drawing.Point(769, 419);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(116, 20);
+            this.label19.Size = new System.Drawing.Size(154, 25);
             this.label19.TabIndex = 29;
             this.label19.Text = "תאריך הצטרפות";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(593, 139);
+            this.label18.Location = new System.Drawing.Point(791, 174);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.Size = new System.Drawing.Size(88, 25);
             this.label18.TabIndex = 28;
             this.label18.Text = "שם פרטי";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(583, 291);
+            this.label17.Location = new System.Drawing.Point(777, 364);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 20);
+            this.label17.Size = new System.Drawing.Size(56, 25);
             this.label17.TabIndex = 27;
             this.label17.Text = "מגדר";
             // 
             // BirthDate
             // 
             this.BirthDate.AutoSize = true;
-            this.BirthDate.Location = new System.Drawing.Point(584, 229);
+            this.BirthDate.Location = new System.Drawing.Point(779, 286);
+            this.BirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BirthDate.Name = "BirthDate";
-            this.BirthDate.Size = new System.Drawing.Size(88, 20);
+            this.BirthDate.Size = new System.Drawing.Size(115, 25);
             this.BirthDate.TabIndex = 26;
             this.BirthDate.Text = "תאריך לידה";
             // 
             // IDtxtbox
             // 
-            this.IDtxtbox.Location = new System.Drawing.Point(403, 90);
+            this.IDtxtbox.Location = new System.Drawing.Point(537, 112);
+            this.IDtxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IDtxtbox.Name = "IDtxtbox";
-            this.IDtxtbox.Size = new System.Drawing.Size(158, 26);
+            this.IDtxtbox.Size = new System.Drawing.Size(209, 31);
             this.IDtxtbox.TabIndex = 38;
             this.IDtxtbox.Text = "נא להזין ת\"ז";
             // 
             // MedicalNotesTxtBox
             // 
-            this.MedicalNotesTxtBox.Location = new System.Drawing.Point(41, 335);
+            this.MedicalNotesTxtBox.Location = new System.Drawing.Point(55, 419);
+            this.MedicalNotesTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MedicalNotesTxtBox.Name = "MedicalNotesTxtBox";
             this.MedicalNotesTxtBox.ReadOnly = true;
-            this.MedicalNotesTxtBox.Size = new System.Drawing.Size(153, 26);
+            this.MedicalNotesTxtBox.Size = new System.Drawing.Size(203, 31);
             this.MedicalNotesTxtBox.TabIndex = 49;
             // 
             // EmergencyTxtBox
             // 
-            this.EmergencyTxtBox.Location = new System.Drawing.Point(41, 202);
+            this.EmergencyTxtBox.Location = new System.Drawing.Point(55, 252);
+            this.EmergencyTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmergencyTxtBox.Name = "EmergencyTxtBox";
             this.EmergencyTxtBox.ReadOnly = true;
-            this.EmergencyTxtBox.Size = new System.Drawing.Size(141, 26);
+            this.EmergencyTxtBox.Size = new System.Drawing.Size(187, 31);
             this.EmergencyTxtBox.TabIndex = 48;
             // 
             // SchoolTxtBox
             // 
-            this.SchoolTxtBox.Location = new System.Drawing.Point(29, 142);
+            this.SchoolTxtBox.Location = new System.Drawing.Point(39, 178);
+            this.SchoolTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SchoolTxtBox.Name = "SchoolTxtBox";
             this.SchoolTxtBox.ReadOnly = true;
-            this.SchoolTxtBox.Size = new System.Drawing.Size(178, 26);
+            this.SchoolTxtBox.Size = new System.Drawing.Size(236, 31);
             this.SchoolTxtBox.TabIndex = 47;
             // 
             // AddressTxtBox
             // 
-            this.AddressTxtBox.Location = new System.Drawing.Point(42, 84);
+            this.AddressTxtBox.Location = new System.Drawing.Point(56, 105);
+            this.AddressTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddressTxtBox.Name = "AddressTxtBox";
             this.AddressTxtBox.ReadOnly = true;
-            this.AddressTxtBox.Size = new System.Drawing.Size(141, 26);
+            this.AddressTxtBox.Size = new System.Drawing.Size(187, 31);
             this.AddressTxtBox.TabIndex = 46;
             // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(376, 185);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(501, 231);
+            this.LastNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LastNameTxtBox.Name = "LastNameTxtBox";
             this.LastNameTxtBox.ReadOnly = true;
-            this.LastNameTxtBox.Size = new System.Drawing.Size(185, 26);
+            this.LastNameTxtBox.Size = new System.Drawing.Size(245, 31);
             this.LastNameTxtBox.TabIndex = 45;
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(385, 139);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(513, 174);
+            this.FirstNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
             this.FirstNameTxtBox.ReadOnly = true;
-            this.FirstNameTxtBox.Size = new System.Drawing.Size(176, 26);
+            this.FirstNameTxtBox.Size = new System.Drawing.Size(233, 31);
             this.FirstNameTxtBox.TabIndex = 44;
             // 
             // JoinDatePick
             // 
             this.JoinDatePick.Enabled = false;
-            this.JoinDatePick.Location = new System.Drawing.Point(371, 333);
+            this.JoinDatePick.Location = new System.Drawing.Point(495, 416);
+            this.JoinDatePick.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.JoinDatePick.Name = "JoinDatePick";
-            this.JoinDatePick.Size = new System.Drawing.Size(203, 26);
+            this.JoinDatePick.Size = new System.Drawing.Size(269, 31);
             this.JoinDatePick.TabIndex = 43;
             // 
             // BirthDatePick
             // 
             this.BirthDatePick.Enabled = false;
-            this.BirthDatePick.Location = new System.Drawing.Point(319, 235);
+            this.BirthDatePick.Location = new System.Drawing.Point(425, 294);
+            this.BirthDatePick.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BirthDatePick.Name = "BirthDatePick";
-            this.BirthDatePick.Size = new System.Drawing.Size(245, 26);
+            this.BirthDatePick.Size = new System.Drawing.Size(325, 31);
             this.BirthDatePick.TabIndex = 42;
             // 
             // AgeGroupCombo
             // 
             this.AgeGroupCombo.Enabled = false;
             this.AgeGroupCombo.FormattingEnabled = true;
-            this.AgeGroupCombo.Location = new System.Drawing.Point(43, 274);
+            this.AgeGroupCombo.Location = new System.Drawing.Point(57, 342);
+            this.AgeGroupCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AgeGroupCombo.Name = "AgeGroupCombo";
-            this.AgeGroupCombo.Size = new System.Drawing.Size(121, 28);
+            this.AgeGroupCombo.Size = new System.Drawing.Size(160, 33);
             this.AgeGroupCombo.TabIndex = 41;
             // 
             // GenderCombo
             // 
             this.GenderCombo.Enabled = false;
             this.GenderCombo.FormattingEnabled = true;
-            this.GenderCombo.Location = new System.Drawing.Point(440, 286);
+            this.GenderCombo.Location = new System.Drawing.Point(587, 358);
+            this.GenderCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GenderCombo.Name = "GenderCombo";
-            this.GenderCombo.Size = new System.Drawing.Size(121, 28);
+            this.GenderCombo.Size = new System.Drawing.Size(160, 33);
             this.GenderCombo.TabIndex = 40;
             // 
             // PaymentCheck
             // 
             this.PaymentCheck.AutoSize = true;
             this.PaymentCheck.Enabled = false;
-            this.PaymentCheck.Location = new System.Drawing.Point(43, 385);
+            this.PaymentCheck.Location = new System.Drawing.Point(57, 481);
+            this.PaymentCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PaymentCheck.Name = "PaymentCheck";
-            this.PaymentCheck.Size = new System.Drawing.Size(22, 21);
+            this.PaymentCheck.Size = new System.Drawing.Size(28, 27);
             this.PaymentCheck.TabIndex = 39;
             this.PaymentCheck.UseVisualStyleBackColor = true;
             // 
             // ViewParticipant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1041, 562);
             this.Controls.Add(this.MedicalNotesTxtBox);
             this.Controls.Add(this.EmergencyTxtBox);
             this.Controls.Add(this.SchoolTxtBox);
@@ -303,6 +328,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.BirthDate);
             this.Controls.Add(this.label14);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewParticipant";
             this.Text = "ViewParticipant";
             this.Load += new System.EventHandler(this.ViewParticipant_Load);
