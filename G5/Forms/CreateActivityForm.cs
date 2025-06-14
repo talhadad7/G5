@@ -29,19 +29,6 @@ namespace G5
             string title = TitleTxtBox.Text.Trim();
             string content = ContentTxtBox.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(content))
-            {
-                MessageBox.Show("יש למלא את כל השדות הנדרשים.", "שגיאה", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            List<string> selectedTags = TagCheckList.CheckedItems.Cast<string>().ToList();
-            List<string> selectedAreas = AreaCheckList.CheckedItems.Cast<string>().ToList();
-
-            // הצגת מידע לבדיקה (בהמשך נשתמש ליצירה בפועל)
-            string message = $"כותרת: {title}\nתוכן: {content}\nתגיות: {string.Join(", ", selectedTags)}\nאיזורים: {string.Join(", ", selectedAreas)}";
-            MessageBox.Show(message, "תצוגת בדיקה", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -105,7 +92,6 @@ namespace G5
                     SQL_CON sc = new SQL_CON();
                     sc.execute_non_query(cmd);
                 }
-
                 MessageBox.Show("הפעולה נוצרה בהצלחה!", "הצלחה", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
