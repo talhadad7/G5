@@ -8,7 +8,6 @@ namespace G5
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime PublishDate { get; set; }
-        public string Audience { get; set; }
 
         // שינוי כאן: במקום string WriterID → Member Writer
         public Member Writer { get; set; }
@@ -19,7 +18,6 @@ namespace G5
             Title = title;
             Content = content;
             PublishDate = publishDate;
-            Audience = audience;
             Writer = writer;
         }
 
