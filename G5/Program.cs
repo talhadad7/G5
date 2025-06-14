@@ -361,6 +361,7 @@ namespace G5
             // Application.Run(new NewParticipantForm1());
             // Application.Run(new UpdateParticpant());
             //  Application.Run(new ViewParticipant());
+            //   Application.Run(new CreateActivityForm());
             Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
                                               // Application.Run(new CreateActivityForm());
             Application.Run(new NewAnnouncementForm());

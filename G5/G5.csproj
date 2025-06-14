@@ -61,6 +61,12 @@
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
     <Compile Include="Classes\Tag.cs" />
+    <Compile Include="Forms\DeleteActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteActivity.Designer.cs">
+      <DependentUpon>DeleteActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateActivityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="Classes\TrainingContent.cs" />
     <EmbeddedResource Include="Forms\CreateActivityForm.resx">
       <DependentUpon>CreateActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteActivity.resx">
+      <DependentUpon>DeleteActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteMemberForm.resx">
       <DependentUpon>DeleteMemberForm.cs</DependentUpon>
