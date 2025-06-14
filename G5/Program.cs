@@ -312,7 +312,6 @@ namespace G5
                     title,
                     content,
                     publishDate,
-                    audience,
                     writer
                 );
 
@@ -358,13 +357,15 @@ namespace G5
             //Application.Run(new DeleteMemberForm());
             //Application.Run(new NewMemberForm());
             // Application.Run(new UpdateMember());
-            //Application.Run(new DeleteParticipant());
+            //Application.Run(new DeleteParticipant());     
             // Application.Run(new NewParticipantForm1());
             // Application.Run(new UpdateParticpant());
             //  Application.Run(new ViewParticipant());
             Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
+                                              // Application.Run(new CreateActivityForm());
+            Application.Run(new NewAnnouncementForm());
 
-          
+
         }
     }
 }

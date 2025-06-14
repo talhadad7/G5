@@ -91,7 +91,7 @@
             this.TagCheckList.FormattingEnabled = true;
             this.TagCheckList.HorizontalScrollbar = true;
             this.TagCheckList.IntegralHeight = false;
-            this.TagCheckList.Location = new System.Drawing.Point(87, 83);
+            this.TagCheckList.Location = new System.Drawing.Point(77, 80);
             this.TagCheckList.Name = "TagCheckList";
             this.TagCheckList.Size = new System.Drawing.Size(160, 115);
             this.TagCheckList.TabIndex = 6;
@@ -103,7 +103,7 @@
             this.AreaCheckList.IntegralHeight = false;
             this.AreaCheckList.Location = new System.Drawing.Point(77, 223);
             this.AreaCheckList.Name = "AreaCheckList";
-            this.AreaCheckList.Size = new System.Drawing.Size(156, 57);
+            this.AreaCheckList.Size = new System.Drawing.Size(156, 121);
             this.AreaCheckList.TabIndex = 7;
             // 
             // TitleTxtBox
@@ -122,7 +122,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(132, 311);
+            this.SaveButton.Location = new System.Drawing.Point(115, 366);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(162, 56);
             this.SaveButton.TabIndex = 10;
@@ -132,7 +132,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(504, 300);
+            this.CancelButton.Location = new System.Drawing.Point(511, 356);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(160, 66);
             this.CancelButton.TabIndex = 11;
@@ -158,6 +158,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CreateActivityForm";
             this.Text = "CreateActivityForm";
+            this.Load += new System.EventHandler(this.CreateActivityForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
