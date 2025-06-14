@@ -12,7 +12,7 @@ namespace G5
         // שינוי כאן: במקום string WriterID → Member Writer
         public Member Writer { get; set; }
 
-        public Announcement(string messageID, string title, string content, DateTime publishDate, string audience, Member writer)
+        public Announcement(string messageID, string title, string content, DateTime publishDate, Member writer)
         {
             MessageID = messageID;
             Title = title;
