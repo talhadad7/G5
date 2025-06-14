@@ -32,11 +32,6 @@ namespace G5.Forms
 
         }
 
-        private void ParticipantsButtonHomeScreen_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MessegesButtonHomeScreen_Click(object sender, EventArgs e)
         {
 
@@ -49,6 +44,63 @@ namespace G5.Forms
 
         private void label5_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void createParticipantToolStripMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewParticipantToolStripMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateParticipantToolStripMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void מחקToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteParticipantToolStripMenuItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParticipantsButtonHomeScreen(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // HomePage
+            // 
+            this.ClientSize = new System.Drawing.Size(1181, 908);
+            this.Name = "HomePage";
+            this.ResumeLayout(false);
 
         }
     }
