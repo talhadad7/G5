@@ -24,7 +24,6 @@ namespace G5
             TagCheckList.Items.AddRange(Program.Tags.Select(t => t.tagType).ToArray());
             AreaCheckList.Items.AddRange(Program.Areas.Select(a => a.AreaName).ToArray());
         }
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
             string title = TitleTxtBox.Text.Trim();
