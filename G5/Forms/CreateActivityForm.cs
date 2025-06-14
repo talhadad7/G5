@@ -18,17 +18,17 @@ namespace G5
             InitializeComponent();
             Program.InitTags();
             Program.InitAreas();
-          //  MessageBox.Show($"תגיות: {Program.Tags.Count}, אזורים: {Program.Areas.Count}");
+            //  MessageBox.Show($"תגיות: {Program.Tags.Count}, אזורים: {Program.Areas.Count}");
 
             // מילוי רשימות CheckBox מתוך הנתונים הקיימים
-            TagCheckList.Items.AddRange(Program.Tags.Select(t => t.tagType).ToArray());
-            AreaCheckList.Items.AddRange(Program.Areas.Select(a => a.AreaName).ToArray());
+            TagCheckList.DataSource = Program.Tags;
+            TagCheckList.DisplayMember = "tagType";
+            TagCheckList.ValueMember = "tagType";
+            AreaCheckList.DataSource = Program.Areas;
+            AreaCheckList.DisplayMember = "areaName"; // מה יוצג למשתמש
+            AreaCheckList.ValueMember = "areaID";    // מה נשמר ברקע        }
         }
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            string title = TitleTxtBox.Text.Trim();
-            string content = ContentTxtBox.Text.Trim();
-
+        
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -52,8 +52,8 @@ namespace G5
                 return;
             }
 
-            List<string> selectedTags = TagCheckList.CheckedItems.Cast<string>().ToList();
-            List<string> selectedAreas = AreaCheckList.CheckedItems.Cast<string>().ToList();
+            List<string> selectedTags = TagCheckList.CheckedItems.Cast<Tag>().Select(t => t.tagType).ToList();
+            List<string> selectedAreas = AreaCheckList.CheckedItems.Cast<Area>().Select(a => a.AreaID).ToList();
 
             try
             {
@@ -74,7 +74,10 @@ namespace G5
                 // שמירת תגיות בפועל
                 foreach (string tag in selectedTags)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO TagsForActivities (activityID, tagType) VALUES (@activityID, @tagType)");
+                    SqlCommand cmd = new SqlCommand("InsertTagForActivity")
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     cmd.Parameters.AddWithValue("@activityID", id);
                     cmd.Parameters.AddWithValue("@tagType", tag);
 
@@ -83,11 +86,14 @@ namespace G5
                 }
 
                 // שמירת אזורים בפועל
-                foreach (string area in selectedAreas)
+                foreach (Area area in AreaCheckList.CheckedItems)
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO AreasForActivities (activityID, areaName) VALUES (@activityID, @areaName)");
+                    SqlCommand cmd = new SqlCommand("InsertAreaForActivity")
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     cmd.Parameters.AddWithValue("@activityID", id);
-                    cmd.Parameters.AddWithValue("@areaName", area);
+                    cmd.Parameters.AddWithValue("@areaID", area.AreaID); // שימוש ב-ID מתוך האובייקט Area
 
                     SQL_CON sc = new SQL_CON();
                     sc.execute_non_query(cmd);
@@ -104,6 +110,11 @@ namespace G5
         private void CancelButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void CreateActivityForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

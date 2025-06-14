@@ -8,18 +8,16 @@ namespace G5
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime PublishDate { get; set; }
-        public string Audience { get; set; }
 
         // שינוי כאן: במקום string WriterID → Member Writer
         public Member Writer { get; set; }
 
-        public Announcement(string messageID, string title, string content, DateTime publishDate, string audience, Member writer)
+        public Announcement(string messageID, string title, string content, DateTime publishDate, Member writer)
         {
             MessageID = messageID;
             Title = title;
             Content = content;
             PublishDate = publishDate;
-            Audience = audience;
             Writer = writer;
         }
 

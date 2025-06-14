@@ -68,7 +68,7 @@ namespace G5
             // 
             // DeleteMemberForm
             // 
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(913, 544);
             this.Name = "DeleteMemberForm";
             this.Load += new System.EventHandler(this.DeleteMemberForm_Load);
             this.ResumeLayout(false);
