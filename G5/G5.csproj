@@ -82,11 +82,23 @@
     <Compile Include="Forms\DeleteParticipant.Designer.cs">
       <DependentUpon>DeleteParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LogInForm.Designer.cs">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MemberGeneralPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MemberGeneralPage.Designer.cs">
+      <DependentUpon>MemberGeneralPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewAnnouncementForm.cs">
       <SubType>Form</SubType>
@@ -150,8 +162,14 @@
     <EmbeddedResource Include="Forms\DeleteParticipant.resx">
       <DependentUpon>DeleteParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MemberGeneralPage.resx">
+      <DependentUpon>MemberGeneralPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewAnnouncementForm.resx">
       <DependentUpon>NewAnnouncementForm.cs</DependentUpon>
