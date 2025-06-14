@@ -53,7 +53,7 @@
             this.lblSearchTitle.Size = new System.Drawing.Size(122, 16);
             this.lblSearchTitle.TabIndex = 0;
             this.lblSearchTitle.Text = "הקלד פעולה לחיפוש";
-            this.lblSearchTitle.Click += new System.EventHandler(this.label1_Click);
+            //this.lblSearchTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtSearchTitle
             // 

@@ -103,11 +103,12 @@ namespace G5
                 MessageBoxIcon.Information
             );
 
-            // 7) SWITCH TO HOME PAGE
-            this.Hide();                       // hide the login form
-            var home = new HomePage();         // create the home page
-            home.StartPosition = FormStartPosition.CenterScreen;
-            home.ShowDialog();                 // open it modally
+            this.Hide();
+            using (var main = new MainPageForm())
+            {
+                main.StartPosition = FormStartPosition.CenterScreen;
+                main.ShowDialog();
+            }              // open it modally
             this.Close();                      // once HomePage closes, end the app
         }
 
