@@ -79,6 +79,7 @@ namespace G5
 
         private void PublishButton_Click_1(object sender, EventArgs e)
         {
+
             string title = TitleTextBox.Text.Trim();
             string content = ContentTextBox.Text.Trim();
 
@@ -136,6 +137,11 @@ namespace G5
         private void CancelButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void NewAnnouncementForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

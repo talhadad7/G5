@@ -160,6 +160,12 @@
     <Compile Include="Forms\UpdateParticpant.Designer.cs">
       <DependentUpon>UpdateParticpant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewAnnouncements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewAnnouncements.Designer.cs">
+      <DependentUpon>ViewAnnouncements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ViewMemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateParticpant.resx">
       <DependentUpon>UpdateParticpant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewAnnouncements.resx">
+      <DependentUpon>ViewAnnouncements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewParticipant.resx">
       <DependentUpon>ViewParticipant.cs</DependentUpon>
