@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityDay.cs" />
+    <Compile Include="Classes\ActivityDay.cs" />
     <Compile Include="Classes\Announcement.cs" />
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\AgeGroupLookup.cs" />
     <Compile Include="Classes\Area.cs" />
+    <Compile Include="Classes\Group.cs" />
     <Compile Include="Classes\MemberTypeLookup.cs" />
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\EquipmentCategoryLookup.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Classes\EventLocationLookup.cs" />
     <Compile Include="Classes\EventTypeLookup.cs" />
     <Compile Include="Classes\Member.cs" />
+    <Compile Include="Classes\Proposal.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
     <Compile Include="Classes\Tag.cs" />
     <Compile Include="Forms\DeleteActivity.cs">
@@ -127,6 +129,12 @@
     </Compile>
     <Compile Include="Forms\NewParticipantForm1.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewProposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewProposal.Designer.cs">
+      <DependentUpon>NewProposal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateMember.cs">
       <SubType>Form</SubType>
@@ -216,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewParticipantForm1.resx">
       <DependentUpon>NewParticipantForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewProposal.resx">
+      <DependentUpon>NewProposal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateMember.resx">
       <DependentUpon>UpdateMember.cs</DependentUpon>
