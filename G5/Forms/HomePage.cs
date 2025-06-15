@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using G5;// אולי מיותר?
 
 namespace G5.Forms
 {
@@ -73,13 +74,13 @@ namespace G5.Forms
 
         private void DeleteParticipant_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "טופס מחיקת משתתף עדיין לא קיים.",
-                "מחק משתתף",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            using (var dlg = new DeleteParticipant())
+            {
+                dlg.StartPosition = FormStartPosition.CenterParent;
+                dlg.ShowDialog(this);
+            }
         }
+
 
         // Existing stubs for other controls
         private void label1_Click(object sender, EventArgs e) { }
