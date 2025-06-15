@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using G5;   // <-- add this so DeleteParticipant is in scope
 
 namespace G5.Forms
 {
@@ -113,13 +114,14 @@ namespace G5.Forms
 
         private void DeleteParticipant_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "טופס מחיקת משתתף עדיין לא קיים.",
-                "מחק משתתף",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            // instantiate and show your real DeleteParticipant form
+            using (var dlg = new DeleteParticipant())
+            {
+                dlg.StartPosition = FormStartPosition.CenterParent;
+                dlg.ShowDialog(this);
+            }
         }
+
 
         // ─── Stubs for the other buttons ───
 
