@@ -366,7 +366,7 @@ namespace G5
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //Application.Run(new GetMemberByIDcs());
-            Application.Run(new DeleteMemberForm());
+            //Application.Run(new DeleteMemberForm());
             //Application.Run(new NewMemberForm());
             // Application.Run(new UpdateMember());
             //Application.Run(new DeleteParticipant());     
@@ -374,10 +374,10 @@ namespace G5
             // Application.Run(new UpdateParticpant());
             //  Application.Run(new ViewParticipant());
             //   Application.Run(new CreateActivityForm());
-            //Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
+            Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
             // Application.Run(new CreateActivityForm());
             //Application.Run(new NewAnnouncementForm());
-            Application.Run(new ViewActivity());
+            //Application.Run(new ViewActivity());
 
 
 
