@@ -93,7 +93,7 @@
             this.Controls.Add(this.lblEnterID);
             this.Name = "DeleteMemberNew";
             this.Text = "DeleteMemberNew";
-            this.Load += new System.EventHandler(this.DeleteMemberNew_Load);
+            //this.Load += new System.EventHandler(this.DeleteMemberNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOfMembers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
