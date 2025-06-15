@@ -10,12 +10,13 @@ namespace G5
 {
     public class Activity
     {
-        public string activityID;
-        public DateTime creationDate;
-        public string title;
-        public string content;
-        public double? totalRank;
-        public string writerID;
+        public string activityID { get; set; }
+        public DateTime creationDate { get; set; }
+        public string title { get; set; }
+        public string content { get; set; }
+        public double? totalRank { get; set; }
+        public string writerID { get; set; }
+
 
         public Activity(
             string activityID,

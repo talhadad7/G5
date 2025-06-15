@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace G5
@@ -14,7 +15,6 @@ namespace G5
             InitializeComponent();
             cmbActivityResults.Enabled = false;
 
-            // חיבור לאירועים
             btnSearchActivity.Click += btnSearchActivity_Click;
             cmbActivityResults.SelectedIndexChanged += cmbActivityResults_SelectedIndexChanged;
         }
@@ -29,9 +29,31 @@ namespace G5
                 return;
             }
 
-            var matchingActivities = Program.Activities
-                .Where(a => a.title.Equals(title, StringComparison.OrdinalIgnoreCase))
-                .ToList();
+            SqlCommand cmd = new SqlCommand("dbo.GetActivitiesByTitle")
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@title", title);
+
+            SQL_CON sc = new SQL_CON();
+            SqlDataReader rdr = sc.execute_query(cmd);
+
+            List<Activity> matchingActivities = new List<Activity>();
+
+            while (rdr.Read())
+            {
+                string activityID = rdr["activityID"].ToString();
+                DateTime creationDate = (DateTime)rdr["creationDate"];
+                string foundTitle = rdr["title"].ToString();
+                string content = rdr["content"].ToString();
+                double? totalRank = rdr["totalRank"] != DBNull.Value ? Convert.ToDouble(rdr["totalRank"]) : (double?)null;
+                string writerID = rdr["writerID"].ToString();
+
+                matchingActivities.Add(new Activity(activityID, creationDate, foundTitle, content, writerID, totalRank));
+            }
+
+            rdr.Close();
+            cmd.Connection?.Close();
 
             if (matchingActivities.Count == 0)
             {
@@ -42,12 +64,13 @@ namespace G5
             if (matchingActivities.Count == 1)
             {
                 DisplayActivity(matchingActivities[0]);
+                cmbActivityResults.DataSource = null;
                 cmbActivityResults.Enabled = false;
             }
             else
             {
                 cmbActivityResults.DataSource = matchingActivities;
-                cmbActivityResults.DisplayMember = "activityID"; // שדה ייחודי, אפשר לשנות ל-title + ID יחד
+                cmbActivityResults.DisplayMember = "title";
                 cmbActivityResults.ValueMember = "activityID";
                 cmbActivityResults.Enabled = true;
             }
@@ -64,7 +87,6 @@ namespace G5
         private void DisplayActivity(Activity a)
         {
             currentActivity = a;
-
             txtTitle.Text = a.title;
             txtContent.Text = a.content;
             txtWriterID.Text = a.writerID;
