@@ -133,11 +133,23 @@
     <Compile Include="Forms\UpdateMember.Designer.cs">
       <DependentUpon>UpdateMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateMemberForm.Designer.cs">
+      <DependentUpon>UpdateMemberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateParticpant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\UpdateParticpant.Designer.cs">
       <DependentUpon>UpdateParticpant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewMemberForm.Designer.cs">
+      <DependentUpon>ViewMemberForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewParticipant.cs">
       <SubType>Form</SubType>

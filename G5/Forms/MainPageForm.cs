@@ -15,15 +15,29 @@ namespace G5.Forms
         // 1) field for the participants dropdown
         private ContextMenuStrip _participantMenu;
 
+        // dropdown menu for Members CRUD
+        private ContextMenuStrip _membersMenu;
+
         public MainPageForm()
         {
             InitializeComponent();
+
+            // existing participant menu
             InitializeParticipantMenu();
 
-            // ensure the button's Click is hooked
+            // new members menu
+            InitializeMembersMenu();
+
+            // ensure the buttons fire the right handlers
             ParticipantsButton.Click -= ParticipantsButton_Click;
             ParticipantsButton.Click += ParticipantsButton_Click;
+
+            MembersButton.Click -= MembersButton_Click;
+            MembersButton.Click += MembersButton_Click;
         }
+
+
+
 
         /// <summary>
         /// Build the "חניכים" menu and attach it to ParticipantsButton.
@@ -44,6 +58,27 @@ namespace G5.Forms
             // attach to button
             ParticipantsButton.ContextMenuStrip = _participantMenu;
         }
+
+        /// <summary>
+        /// Builds & attaches the “בוגרים” CRUD menu to MembersButton.
+        /// </summary>
+        private void InitializeMembersMenu()
+        {
+            _membersMenu = new ContextMenuStrip();
+
+            // disabled header
+            _membersMenu.Items.Add(new ToolStripMenuItem("בוגרים") { Enabled = false });
+
+            // CRUD items
+            _membersMenu.Items.Add(new ToolStripMenuItem("צור", null, CreateMember_Click));
+            _membersMenu.Items.Add(new ToolStripMenuItem("צפה", null, ViewMember_Click));
+            _membersMenu.Items.Add(new ToolStripMenuItem("עדכן", null, UpdateMember_Click));
+            _membersMenu.Items.Add(new ToolStripMenuItem("מחק", null, DeleteMember_Click));
+
+            // attach to the button
+            MembersButton.ContextMenuStrip = _membersMenu;
+        }
+
 
         /// <summary>
         /// On left-click, drop the menu right under the button.
@@ -90,8 +125,58 @@ namespace G5.Forms
 
         private void MembersButton_Click(object sender, EventArgs e)
         {
-            // TODO: implement Members logic
+            // grab the logged-in user’s type
+            var type = Program.CurrentUser.memberTypeName;
+
+
+            // only coordinators allowed
+            if (!Program.CoordinatorTypes.Contains(type))
+            {
+                MessageBox.Show(
+                    "אינך מורשה - הגישה אפשרית לרכזים בלבד",
+                    "אין הרשאה",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            // authorized → show the members CRUD menu
+            _membersMenu.Show(
+                MembersButton,
+                new Point(0, MembersButton.Height)
+            );
         }
+
+
+        private void CreateMember_Click(object sender, EventArgs e)
+        {
+            using (var f = new NewMemberForm())
+                f.ShowDialog();
+        }
+
+        private void ViewMember_Click(object sender, EventArgs e)
+        {
+            using (var f = new ViewMemberForm())
+                f.ShowDialog();
+        }
+
+        private void UpdateMember_Click(object sender, EventArgs e)
+        {
+            using (var f = new UpdateMemberForm())
+               f.ShowDialog();
+        }
+
+        private void DeleteMember_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "טופס מחיקת חבר עדיין לא קיים.",
+                "מחק חבר",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+        }
+
 
         private void ActivitiesButton_Click(object sender, EventArgs e)
         {
@@ -101,6 +186,11 @@ namespace G5.Forms
         private void MessagesButton_Click(object sender, EventArgs e)
         {
             // TODO: implement Messages logic
+        }
+
+        private void MainPageForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
