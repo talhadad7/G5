@@ -26,6 +26,18 @@ namespace G5
         public static System.Collections.Generic.List<Tag> Tags;
         public static Member CurrentUser { get; set; }
 
+
+        /// <summary>
+        /// Which MemberTypeLookup values are considered coordinators
+        /// </summary>
+        public static readonly MemberTypeLookup[] CoordinatorTypes = new[]
+        {
+             MemberTypeLookup.InstructorCoordinator,
+             MemberTypeLookup.TechnicalCoordinator,
+             MemberTypeLookup.BranchCoordinator
+        };
+
+
         public static void InitTags()
         {
             var cmd = new System.Data.SqlClient.SqlCommand("SELECT tagType FROM Tags");
@@ -364,7 +376,7 @@ namespace G5
             //   Application.Run(new CreateActivityForm());
             Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
                                               // Application.Run(new CreateActivityForm());
-            Application.Run(new NewAnnouncementForm());
+            //Application.Run(new NewAnnouncementForm());
 
 
         }

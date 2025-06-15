@@ -39,27 +39,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(521, 108);
+            this.label1.Location = new System.Drawing.Point(695, 135);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.Size = new System.Drawing.Size(112, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "שם משתמש";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(536, 186);
+            this.label2.Location = new System.Drawing.Point(715, 232);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "סיסמא";
             // 
             // LogInButton
             // 
-            this.LogInButton.Location = new System.Drawing.Point(325, 281);
+            this.LogInButton.Location = new System.Drawing.Point(433, 351);
+            this.LogInButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.LogInButton.Size = new System.Drawing.Size(113, 44);
+            this.LogInButton.Size = new System.Drawing.Size(151, 55);
             this.LogInButton.TabIndex = 2;
             this.LogInButton.Text = "חבר אותי!";
             this.LogInButton.UseVisualStyleBackColor = true;
@@ -67,38 +70,43 @@
             // 
             // UserNameTxtBox
             // 
-            this.UserNameTxtBox.Location = new System.Drawing.Point(309, 99);
+            this.UserNameTxtBox.Location = new System.Drawing.Point(412, 124);
+            this.UserNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserNameTxtBox.Name = "UserNameTxtBox";
-            this.UserNameTxtBox.Size = new System.Drawing.Size(168, 26);
+            this.UserNameTxtBox.Size = new System.Drawing.Size(223, 31);
             this.UserNameTxtBox.TabIndex = 3;
+            this.UserNameTxtBox.TextChanged += new System.EventHandler(this.UserNameTxtBox_TextChanged);
             // 
             // PasswordTxtBox
             // 
-            this.PasswordTxtBox.Location = new System.Drawing.Point(297, 179);
+            this.PasswordTxtBox.Location = new System.Drawing.Point(396, 224);
+            this.PasswordTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordTxtBox.Name = "PasswordTxtBox";
-            this.PasswordTxtBox.Size = new System.Drawing.Size(179, 26);
+            this.PasswordTxtBox.Size = new System.Drawing.Size(237, 31);
             this.PasswordTxtBox.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(384, 35);
+            this.label3.Location = new System.Drawing.Point(512, 44);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 20);
+            this.label3.Size = new System.Drawing.Size(172, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "התחברות למערכת";
             // 
             // LogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PasswordTxtBox);
             this.Controls.Add(this.UserNameTxtBox);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LogInForm";
             this.Text = "LogInForm";
             this.Load += new System.EventHandler(this.LogInForm_Load);
