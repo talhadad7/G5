@@ -366,7 +366,7 @@ namespace G5
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //Application.Run(new GetMemberByIDcs());
-            //Application.Run(new DeleteMemberForm());
+            Application.Run(new DeleteMemberForm());
             //Application.Run(new NewMemberForm());
             // Application.Run(new UpdateMember());
             //Application.Run(new DeleteParticipant());     
