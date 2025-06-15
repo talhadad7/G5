@@ -377,7 +377,9 @@ namespace G5
             //Application.Run(new LogInForm()); // ⬅️ טופס ההתחברות
             // Application.Run(new CreateActivityForm());
             //Application.Run(new NewAnnouncementForm());
-            Application.Run(new ViewActivity());
+            //Application.Run(new ViewActivity());
+            Application.Run(new DeleteMemberNew());
+
 
 
 
