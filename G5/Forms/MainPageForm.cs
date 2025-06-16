@@ -98,7 +98,7 @@ namespace G5.Forms
 
             // 1) Everyone can view
             _announcementsMenu.Items.Add(
-                "View Announcements",
+                "צפה בהודעות",
                 null,
                 (s, e) =>
                 {
@@ -108,7 +108,7 @@ namespace G5.Forms
             );
 
             // 2) Everyone sees “New Announcement” – but click does different things
-            var newItem = new ToolStripMenuItem("New Announcement");
+            var newItem = new ToolStripMenuItem("צור הודעה חדשה");
             newItem.Click += (s, e) =>
             {
                 bool isCoordinator = Program.CoordinatorTypes
