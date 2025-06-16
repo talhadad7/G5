@@ -22,6 +22,9 @@ namespace G5.Forms
         // dropdown menu for Announcements
         private ContextMenuStrip _announcementsMenu;
 
+        private ContextMenuStrip _activityMenu;
+
+
         public MainPageForm()
         {
             InitializeComponent();
@@ -33,6 +36,11 @@ namespace G5.Forms
             InitializeMembersMenu();
 
             InitializeAnnouncementsMenu();
+
+            InitializeActivityMenu();
+
+            ActivityButton.ContextMenuStrip = _activityMenu;
+
 
             // ensure the buttons fire the right handlers
             ParticipantsButton.Click -= ParticipantsButton_Click;
@@ -47,6 +55,42 @@ namespace G5.Forms
         /// <summary>
         /// Builds the “Announcements” menu and hooks it to MessagesButton.
         /// </summary>
+
+
+        private void InitializeActivityMenu()
+        {
+            _activityMenu = new ContextMenuStrip();
+
+            // Create "Create Activity" option
+            ToolStripMenuItem createItem = new ToolStripMenuItem("צור פעילות חדש");
+            createItem.Click += (sender, e) =>
+            {
+                CreateActivityForm form = new CreateActivityForm();
+                form.ShowDialog();
+            };
+
+            // Create "View Activities" option
+            ToolStripMenuItem viewItem = new ToolStripMenuItem("צפה במאגר הפעילויות");
+            viewItem.Click += (sender, e) =>
+            {
+                ViewActivity form = new ViewActivity();
+                form.ShowDialog();
+            };
+
+            // Create "Delete Activity" option
+            ToolStripMenuItem deleteItem = new ToolStripMenuItem("מחק פעולה");
+            deleteItem.Click += (sender, e) =>
+            {
+                DeleteActivity form = new DeleteActivity();
+                form.ShowDialog();
+            };
+
+            // Add all items to the context menu
+            _activityMenu.Items.Add(createItem);
+            _activityMenu.Items.Add(viewItem);
+            _activityMenu.Items.Add(deleteItem);
+        }
+
         private void InitializeAnnouncementsMenu()
         {
             _announcementsMenu = new ContextMenuStrip();
@@ -244,16 +288,30 @@ namespace G5.Forms
 
 
 
-        private void ActivitiesButton_Click(object sender, EventArgs e)
-        {
-            // TODO: implement Activities logic
-        }
+       // private void ActivitiesButton_Click(object sender, EventArgs e)
+        //{
+           // _activityMenu.Show(
+             ///   ActivityButton,
+              //  new Point(0, ActivityButton.Height)
+          //  );
+       // }
 
-        
+
+
+
+
 
         private void MainPageForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ActivityButton_Click(object sender, EventArgs e)
+        {
+            _activityMenu.Show(
+                ActivityButton,
+                new Point(0, ActivityButton.Height)
+            );
         }
 
         private void ProposalButton_Click(object sender, EventArgs e)
