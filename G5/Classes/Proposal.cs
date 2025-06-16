@@ -64,19 +64,28 @@ namespace G5
         // שליפה מהירה של שם אזור לפי areaID
         public void FetchAreaName()
         {
-            SqlCommand cmd = new SqlCommand("SELECT areaName FROM Areas WHERE areaID = @areaID");
+            if (string.IsNullOrEmpty(this.areaID))
+            {
+                // רק מציין שאין אזור – לא שומר בטבלה
+                areaName = "ללא אזור";
+                return;
+            }
+
+            SqlCommand cmd = new SqlCommand("SELECT areaName FROM dbo.Areas WHERE areaID = @areaID");
             cmd.Parameters.AddWithValue("@areaID", this.areaID);
 
             SQL_CON sql = new SQL_CON();
             SqlDataReader rdr = sql.execute_query(cmd);
 
-            if (rdr.Read())
+            if (rdr != null && rdr.Read())
                 areaName = rdr["areaName"].ToString();
             else
                 areaName = "אזור לא נמצא";
 
-            rdr.Close();
+            rdr?.Close();
         }
+
+
 
         // שליפה מהירה של שם פעילות לפי activityID
         public void FetchActivityName()
