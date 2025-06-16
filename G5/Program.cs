@@ -370,7 +370,7 @@ namespace G5
             //Application.Run(new NewMemberForm());
             // Application.Run(new UpdateMember());
             //Application.Run(new DeleteParticipant());     
-            // Application.Run(new NewParticipantForm1());
+            //Application.Run(new NewParticipantForm1());
             // Application.Run(new UpdateParticpant());
             //  Application.Run(new ViewParticipant());
             //   Application.Run(new CreateActivityForm());
@@ -378,11 +378,12 @@ namespace G5
             // Application.Run(new CreateActivityForm());
             //Application.Run(new NewAnnouncementForm());
             //Application.Run(new ViewActivity());
+            //Application.Run(new ViewMember());
 
-        // Application.Run(new DeleteMemberNew());
+            // Application.Run(new DeleteMemberNew());
 
             // Application.Run(new ViewActivity());
-           Application.Run(new NewProposal());
+            // Application.Run(new NewProposal());
 
 
 
