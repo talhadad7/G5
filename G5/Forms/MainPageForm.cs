@@ -48,7 +48,7 @@ namespace G5.Forms
 
             MembersButton.Click -= MembersButton_Click;
             MembersButton.Click += MembersButton_Click;
-            this.ProposalButton.Click += new System.EventHandler(this.ProposalButton_Click);
+            //this.ProposalButton.Click += new System.EventHandler(this.ProposalButton_Click);
 
         }
 
@@ -84,6 +84,15 @@ namespace G5.Forms
                 DeleteActivity form = new DeleteActivity();
                 form.ShowDialog();
             };
+
+            // ─── New “Proposal” under Activities ───
+            var proposalItem = new ToolStripMenuItem("הצעה חדשה ליום פעילות הבא");
+            proposalItem.Click += (s, e) =>
+            {
+                using (var form = new NewProposal())
+                    form.ShowDialog(this);
+            };
+            _activityMenu.Items.Add(proposalItem);
 
             // Add all items to the context menu
             _activityMenu.Items.Add(createItem);
@@ -267,7 +276,7 @@ namespace G5.Forms
 
         private void ViewMember_Click(object sender, EventArgs e)
         {
-            using (var f = new GetMemberByIDcs())
+            using (var f = new ViewMember())
                 f.ShowDialog();
         }
 

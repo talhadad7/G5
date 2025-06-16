@@ -16,5 +16,10 @@ namespace G5
         {
             InitializeComponent();
         }
+
+        private void CreateParticipant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

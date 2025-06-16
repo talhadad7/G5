@@ -169,12 +169,6 @@
     <Compile Include="Forms\ViewAnnouncements.Designer.cs">
       <DependentUpon>ViewAnnouncements.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ViewMemberForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewMemberForm.Designer.cs">
-      <DependentUpon>ViewMemberForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ViewParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
