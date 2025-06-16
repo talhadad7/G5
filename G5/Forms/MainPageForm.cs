@@ -171,13 +171,13 @@ namespace G5.Forms
 
         private void DeleteMember_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "טופס מחיקת חבר עדיין לא קיים.",
-                "מחק חבר",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            using (var f = new DeleteMemberNew())
+            {
+                f.StartPosition = FormStartPosition.CenterParent;
+                f.ShowDialog(this);
+            }
         }
+
 
 
         private void ActivitiesButton_Click(object sender, EventArgs e)
