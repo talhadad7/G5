@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetMemberByIDcs));
             this.MemberIDTXTBox = new System.Windows.Forms.TextBox();
             this.MemberByIDLabel = new System.Windows.Forms.Label();
             this.MemberSearchButton = new System.Windows.Forms.Button();
@@ -52,38 +53,44 @@
             this.colEmergencyContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPaymentStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrainingStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.g5DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MemberIDTXTBox
             // 
-            this.MemberIDTXTBox.Location = new System.Drawing.Point(183, 228);
-            this.MemberIDTXTBox.Margin = new System.Windows.Forms.Padding(4);
+            this.MemberIDTXTBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberIDTXTBox.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.MemberIDTXTBox.Location = new System.Drawing.Point(410, 146);
             this.MemberIDTXTBox.Name = "MemberIDTXTBox";
-            this.MemberIDTXTBox.Size = new System.Drawing.Size(191, 31);
+            this.MemberIDTXTBox.Size = new System.Drawing.Size(205, 28);
             this.MemberIDTXTBox.TabIndex = 0;
             this.MemberIDTXTBox.Text = "נא להכניס תז";
+            this.MemberIDTXTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MemberIDTXTBox.TextChanged += new System.EventHandler(this.IDInserted);
             // 
             // MemberByIDLabel
             // 
             this.MemberByIDLabel.AutoSize = true;
-            this.MemberByIDLabel.Location = new System.Drawing.Point(773, 60);
-            this.MemberByIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MemberByIDLabel.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberByIDLabel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.MemberByIDLabel.Location = new System.Drawing.Point(351, 45);
             this.MemberByIDLabel.Name = "MemberByIDLabel";
-            this.MemberByIDLabel.Size = new System.Drawing.Size(110, 25);
+            this.MemberByIDLabel.Size = new System.Drawing.Size(170, 34);
             this.MemberByIDLabel.TabIndex = 1;
             this.MemberByIDLabel.Text = "חיפוש בוגר";
             // 
             // MemberSearchButton
             // 
-            this.MemberSearchButton.Location = new System.Drawing.Point(1275, 208);
-            this.MemberSearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MemberSearchButton.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberSearchButton.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.MemberSearchButton.Location = new System.Drawing.Point(263, 141);
             this.MemberSearchButton.Name = "MemberSearchButton";
-            this.MemberSearchButton.Size = new System.Drawing.Size(152, 74);
+            this.MemberSearchButton.Size = new System.Drawing.Size(125, 37);
             this.MemberSearchButton.TabIndex = 2;
             this.MemberSearchButton.Text = "חיפוש";
             this.MemberSearchButton.UseVisualStyleBackColor = true;
@@ -114,6 +121,7 @@
             // 
             // dgvMembers
             // 
+            this.dgvMembers.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMemberID,
@@ -130,12 +138,11 @@
             this.colEmergencyContact,
             this.colPaymentStatus,
             this.colTrainingStatus});
-            this.dgvMembers.Location = new System.Drawing.Point(43, 319);
-            this.dgvMembers.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMembers.Location = new System.Drawing.Point(29, 204);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.RowHeadersWidth = 62;
             this.dgvMembers.RowTemplate.Height = 28;
-            this.dgvMembers.Size = new System.Drawing.Size(1516, 136);
+            this.dgvMembers.Size = new System.Drawing.Size(814, 158);
             this.dgvMembers.TabIndex = 3;
             this.dgvMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellContentClick);
             // 
@@ -249,16 +256,26 @@
             this.colTrainingStatus.ReadOnly = true;
             this.colTrainingStatus.Width = 150;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 126);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // GetMemberByIDcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1601, 562);
+            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.ClientSize = new System.Drawing.Size(882, 503);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvMembers);
             this.Controls.Add(this.MemberSearchButton);
             this.Controls.Add(this.MemberByIDLabel);
             this.Controls.Add(this.MemberIDTXTBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GetMemberByIDcs";
             this.Text = "GetMemberByIDcs";
             this.Load += new System.EventHandler(this.GetMemberByIDcs_Load);
@@ -266,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.participantsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +314,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmergencyContact;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrainingStatus;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

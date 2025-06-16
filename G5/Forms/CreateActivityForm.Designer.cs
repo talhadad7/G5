@@ -40,8 +40,8 @@
             this.ContentTxtBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +82,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(299, 135);
+            this.label5.Location = new System.Drawing.Point(266, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 21);
             this.label5.TabIndex = 4;
@@ -93,7 +93,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(223, 262);
+            this.label4.Location = new System.Drawing.Point(190, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 21);
             this.label4.TabIndex = 5;
@@ -105,7 +105,7 @@
             this.TagCheckList.FormattingEnabled = true;
             this.TagCheckList.HorizontalScrollbar = true;
             this.TagCheckList.IntegralHeight = false;
-            this.TagCheckList.Location = new System.Drawing.Point(70, 135);
+            this.TagCheckList.Location = new System.Drawing.Point(37, 174);
             this.TagCheckList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TagCheckList.Name = "TagCheckList";
             this.TagCheckList.Size = new System.Drawing.Size(143, 93);
@@ -117,7 +117,7 @@
             this.AreaCheckList.FormattingEnabled = true;
             this.AreaCheckList.HorizontalScrollbar = true;
             this.AreaCheckList.IntegralHeight = false;
-            this.AreaCheckList.Location = new System.Drawing.Point(70, 262);
+            this.AreaCheckList.Location = new System.Drawing.Point(37, 301);
             this.AreaCheckList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AreaCheckList.Name = "AreaCheckList";
             this.AreaCheckList.Size = new System.Drawing.Size(143, 98);
@@ -169,14 +169,14 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click_1);
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 100);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(155, 126);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
             // CreateActivityForm
             // 
@@ -184,7 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(882, 503);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ContentTxtBox);
@@ -200,7 +200,7 @@
             this.Name = "CreateActivityForm";
             this.Text = "CreateActivityForm";
             this.Load += new System.EventHandler(this.CreateActivityForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +219,6 @@
         private System.Windows.Forms.TextBox ContentTxtBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
