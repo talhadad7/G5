@@ -19,6 +19,9 @@ namespace G5.Forms
         // dropdown menu for Members CRUD
         private ContextMenuStrip _membersMenu;
 
+        // dropdown menu for Announcements
+        private ContextMenuStrip _announcementsMenu;
+
         public MainPageForm()
         {
             InitializeComponent();
@@ -29,6 +32,8 @@ namespace G5.Forms
             // new members menu
             InitializeMembersMenu();
 
+            InitializeAnnouncementsMenu();
+
             // ensure the buttons fire the right handlers
             ParticipantsButton.Click -= ParticipantsButton_Click;
             ParticipantsButton.Click += ParticipantsButton_Click;
@@ -36,6 +41,63 @@ namespace G5.Forms
             MembersButton.Click -= MembersButton_Click;
             MembersButton.Click += MembersButton_Click;
         }
+
+        /// <summary>
+        /// Builds the “Announcements” menu and hooks it to MessagesButton.
+        /// </summary>
+        private void InitializeAnnouncementsMenu()
+        {
+            _announcementsMenu = new ContextMenuStrip();
+
+            // Disabled header
+            _announcementsMenu.Items.Add(new ToolStripMenuItem("Announcements") { Enabled = false });
+
+            // 1) Everyone can view
+            _announcementsMenu.Items.Add(
+                "View Announcements",
+                null,
+                (s, e) =>
+                {
+                    using (var f = new ViewAnnouncements())
+                        f.ShowDialog(this);
+                }
+            );
+
+            // 2) Everyone sees “New Announcement” – but click does different things
+            var newItem = new ToolStripMenuItem("New Announcement");
+            newItem.Click += (s, e) =>
+            {
+                bool isCoordinator = Program.CoordinatorTypes
+                    .Contains(Program.CurrentUser.memberTypeName);
+
+                if (isCoordinator)
+                {
+                    // coordinators open the form
+                    using (var f = new NewAnnouncementForm())
+                        f.ShowDialog(this);
+                }
+                else
+                {
+                    // non-coordinators get this Hebrew message:
+                    MessageBox.Show(
+                        "אין לך גישה – רק רכזים מורשים לפרסם הודעות.",
+                        "אין הרשאה",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                }
+            };
+            _announcementsMenu.Items.Add(newItem);
+
+            // 3) Attach to your Messages button
+            MessagesButton.ContextMenuStrip = _announcementsMenu;
+            MessagesButton.Click += (s, e) =>
+                _announcementsMenu.Show(
+                    MessagesButton,
+                    new Point(0, MessagesButton.Height)
+                );
+        }
+
 
 
 
@@ -185,10 +247,7 @@ namespace G5.Forms
             // TODO: implement Activities logic
         }
 
-        private void MessagesButton_Click(object sender, EventArgs e)
-        {
-            // TODO: implement Messages logic
-        }
+        
 
         private void MainPageForm_Load(object sender, EventArgs e)
         {

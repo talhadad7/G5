@@ -31,7 +31,7 @@
             this.MembersButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.ParticipantsButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.MessagesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MembersButton
@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(362, 84);
+            this.button2.Location = new System.Drawing.Point(376, 78);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(198, 76);
             this.button2.TabIndex = 1;
@@ -63,21 +63,21 @@
             this.ParticipantsButton.UseVisualStyleBackColor = true;
             this.ParticipantsButton.Click += new System.EventHandler(this.ParticipantsButton_Click);
             // 
-            // button4
+            // MessagesButton
             // 
-            this.button4.Location = new System.Drawing.Point(612, 84);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(195, 70);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.MessagesButton.Location = new System.Drawing.Point(593, 81);
+            this.MessagesButton.Name = "MessagesButton";
+            this.MessagesButton.Size = new System.Drawing.Size(195, 70);
+            this.MessagesButton.TabIndex = 3;
+            this.MessagesButton.Text = "הודעות";
+            this.MessagesButton.UseVisualStyleBackColor = true;
             // 
             // MainPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.MessagesButton);
             this.Controls.Add(this.ParticipantsButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.MembersButton);
@@ -93,6 +93,6 @@
         private System.Windows.Forms.Button MembersButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button ParticipantsButton;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button MessagesButton;
     }
 }

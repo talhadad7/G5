@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityDay.cs" />
+    <Compile Include="Classes\ActivityDay.cs" />
     <Compile Include="Classes\Announcement.cs" />
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\AgeGroupLookup.cs" />
     <Compile Include="Classes\Area.cs" />
+    <Compile Include="Classes\Group.cs" />
     <Compile Include="Classes\MemberTypeLookup.cs" />
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\EquipmentCategoryLookup.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Classes\EventLocationLookup.cs" />
     <Compile Include="Classes\EventTypeLookup.cs" />
     <Compile Include="Classes\Member.cs" />
+    <Compile Include="Classes\Proposal.cs" />
     <Compile Include="Classes\SQL_CON.cs" />
     <Compile Include="Classes\Tag.cs" />
     <Compile Include="Forms\DeleteMemberNew.cs">
@@ -131,6 +133,12 @@
     <Compile Include="Forms\NewParticipantForm1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\NewProposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewProposal.Designer.cs">
+      <DependentUpon>NewProposal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +156,12 @@
     </Compile>
     <Compile Include="Forms\UpdateParticpant.Designer.cs">
       <DependentUpon>UpdateParticpant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewAnnouncements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewAnnouncements.Designer.cs">
+      <DependentUpon>ViewAnnouncements.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewMemberForm.cs">
       <SubType>Form</SubType>
@@ -220,11 +234,17 @@
     <EmbeddedResource Include="Forms\NewParticipantForm1.resx">
       <DependentUpon>NewParticipantForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewProposal.resx">
+      <DependentUpon>NewProposal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateMember.resx">
       <DependentUpon>UpdateMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateParticpant.resx">
       <DependentUpon>UpdateParticpant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewAnnouncements.resx">
+      <DependentUpon>ViewAnnouncements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewParticipant.resx">
       <DependentUpon>ViewParticipant.cs</DependentUpon>
