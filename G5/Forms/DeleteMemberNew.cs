@@ -84,5 +84,25 @@ namespace G5
                 dgvListOfMembers.DataSource = null;
             }
         }
+
+        private void DeleteMemberNew_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEnterID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteMember_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
