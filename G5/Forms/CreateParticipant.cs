@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace G5
 {
-    public partial class HomePage : Form
+    public partial class CreateParticipant : Form
     {
-        public HomePage()
+        public CreateParticipant()
         {
             InitializeComponent();
         }

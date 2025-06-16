@@ -40,6 +40,8 @@ namespace G5.Forms
 
             MembersButton.Click -= MembersButton_Click;
             MembersButton.Click += MembersButton_Click;
+            this.ProposalButton.Click += new System.EventHandler(this.ProposalButton_Click);
+
         }
 
         /// <summary>
@@ -221,13 +223,13 @@ namespace G5.Forms
 
         private void ViewMember_Click(object sender, EventArgs e)
         {
-            using (var f = new ViewMemberForm())
+            using (var f = new GetMemberByIDcs())
                 f.ShowDialog();
         }
 
         private void UpdateMember_Click(object sender, EventArgs e)
         {
-            using (var f = new UpdateMemberForm())
+            using (var f = new UpdateMember())
                f.ShowDialog();
         }
 
@@ -252,6 +254,12 @@ namespace G5.Forms
         private void MainPageForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ProposalButton_Click(object sender, EventArgs e)
+        {
+            using (var form = new NewProposal())
+                form.ShowDialog(this);
         }
     }
 }
