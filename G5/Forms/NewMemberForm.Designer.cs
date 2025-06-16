@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMemberForm));
             this.label1 = new System.Windows.Forms.Label();
             this.EmergencyContact = new System.Windows.Forms.Label();
             this.Payment = new System.Windows.Forms.Label();
@@ -59,18 +60,20 @@
             this.PhoneTXT = new System.Windows.Forms.TextBox();
             this.CreateMemberButton = new System.Windows.Forms.Button();
             this.ReturnFromCreateMember = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SeniorityNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(459, 25);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(333, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 36);
+            this.label1.Size = new System.Drawing.Size(204, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "צור בוגר חדש";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -78,11 +81,11 @@
             // EmergencyContact
             // 
             this.EmergencyContact.AutoSize = true;
-            this.EmergencyContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmergencyContact.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.EmergencyContact.Location = new System.Drawing.Point(396, 101);
+            this.EmergencyContact.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmergencyContact.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.EmergencyContact.Location = new System.Drawing.Point(295, 130);
             this.EmergencyContact.Name = "EmergencyContact";
-            this.EmergencyContact.Size = new System.Drawing.Size(129, 20);
+            this.EmergencyContact.Size = new System.Drawing.Size(124, 21);
             this.EmergencyContact.TabIndex = 1;
             this.EmergencyContact.Text = "איש קשר חירום";
             this.EmergencyContact.Click += new System.EventHandler(this.label2_Click);
@@ -90,88 +93,95 @@
             // Payment
             // 
             this.Payment.AutoSize = true;
-            this.Payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Payment.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Payment.Location = new System.Drawing.Point(470, 150);
+            this.Payment.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Payment.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Payment.Location = new System.Drawing.Point(360, 180);
             this.Payment.Name = "Payment";
-            this.Payment.Size = new System.Drawing.Size(61, 20);
+            this.Payment.Size = new System.Drawing.Size(62, 21);
             this.Payment.TabIndex = 2;
             this.Payment.Text = "תשלום";
+            this.Payment.Click += new System.EventHandler(this.Payment_Click);
             // 
             // JoinDate
             // 
             this.JoinDate.AutoSize = true;
-            this.JoinDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JoinDate.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.JoinDate.Location = new System.Drawing.Point(399, 194);
+            this.JoinDate.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JoinDate.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.JoinDate.Location = new System.Drawing.Point(288, 231);
             this.JoinDate.Name = "JoinDate";
-            this.JoinDate.Size = new System.Drawing.Size(132, 20);
+            this.JoinDate.Size = new System.Drawing.Size(131, 21);
             this.JoinDate.TabIndex = 3;
             this.JoinDate.Text = "תאריך הצטרפות";
+            this.JoinDate.Click += new System.EventHandler(this.JoinDate_Click);
             // 
             // MemberType
             // 
             this.MemberType.AutoSize = true;
-            this.MemberType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MemberType.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.MemberType.Location = new System.Drawing.Point(438, 238);
+            this.MemberType.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberType.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.MemberType.Location = new System.Drawing.Point(335, 277);
             this.MemberType.Name = "MemberType";
-            this.MemberType.Size = new System.Drawing.Size(87, 20);
+            this.MemberType.Size = new System.Drawing.Size(87, 21);
             this.MemberType.TabIndex = 4;
             this.MemberType.Text = "סוג תפקיד";
+            this.MemberType.Click += new System.EventHandler(this.MemberType_Click);
             // 
             // TrainingProccess
             // 
             this.TrainingProccess.AutoSize = true;
-            this.TrainingProccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrainingProccess.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.TrainingProccess.Location = new System.Drawing.Point(410, 282);
+            this.TrainingProccess.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrainingProccess.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.TrainingProccess.Location = new System.Drawing.Point(303, 325);
             this.TrainingProccess.Name = "TrainingProccess";
-            this.TrainingProccess.Size = new System.Drawing.Size(115, 20);
+            this.TrainingProccess.Size = new System.Drawing.Size(119, 21);
             this.TrainingProccess.TabIndex = 5;
             this.TrainingProccess.Text = "תהליך הכשרה";
+            this.TrainingProccess.Click += new System.EventHandler(this.TrainingProccess_Click);
             // 
             // LastName
             // 
             this.LastName.AutoSize = true;
-            this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastName.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.LastName.Location = new System.Drawing.Point(942, 144);
+            this.LastName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastName.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.LastName.Location = new System.Drawing.Point(742, 186);
             this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(93, 20);
+            this.LastName.Size = new System.Drawing.Size(98, 21);
             this.LastName.TabIndex = 6;
             this.LastName.Text = "שם משפחה";
+            this.LastName.Click += new System.EventHandler(this.LastName_Click);
             // 
             // PrivateName
             // 
             this.PrivateName.AutoSize = true;
-            this.PrivateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrivateName.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.PrivateName.Location = new System.Drawing.Point(959, 96);
+            this.PrivateName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrivateName.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.PrivateName.Location = new System.Drawing.Point(771, 134);
             this.PrivateName.Name = "PrivateName";
-            this.PrivateName.Size = new System.Drawing.Size(76, 20);
+            this.PrivateName.Size = new System.Drawing.Size(76, 21);
             this.PrivateName.TabIndex = 7;
             this.PrivateName.Text = "שם פרטי";
+            this.PrivateName.Click += new System.EventHandler(this.PrivateName_Click);
             // 
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.ID.Location = new System.Drawing.Point(933, 190);
+            this.ID.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.ID.Location = new System.Drawing.Point(744, 232);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(102, 20);
+            this.ID.Size = new System.Drawing.Size(96, 21);
             this.ID.TabIndex = 8;
             this.ID.Text = "תעודת זהות";
+            this.ID.Click += new System.EventHandler(this.ID_Click);
             // 
             // BirthDate
             // 
             this.BirthDate.AutoSize = true;
-            this.BirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BirthDate.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.BirthDate.Location = new System.Drawing.Point(933, 234);
+            this.BirthDate.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BirthDate.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.BirthDate.Location = new System.Drawing.Point(742, 280);
             this.BirthDate.Name = "BirthDate";
-            this.BirthDate.Size = new System.Drawing.Size(100, 20);
+            this.BirthDate.Size = new System.Drawing.Size(98, 21);
             this.BirthDate.TabIndex = 9;
             this.BirthDate.Text = "תאריך לידה";
             this.BirthDate.Click += new System.EventHandler(this.label10_Click);
@@ -179,40 +189,42 @@
             // Seniority
             // 
             this.Seniority.AutoSize = true;
-            this.Seniority.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Seniority.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Seniority.Location = new System.Drawing.Point(483, 326);
+            this.Seniority.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Seniority.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Seniority.Location = new System.Drawing.Point(382, 370);
             this.Seniority.Name = "Seniority";
-            this.Seniority.Size = new System.Drawing.Size(37, 20);
+            this.Seniority.Size = new System.Drawing.Size(37, 21);
             this.Seniority.TabIndex = 10;
             this.Seniority.Text = "ותק";
+            this.Seniority.Click += new System.EventHandler(this.Seniority_Click);
             // 
             // Gender
             // 
             this.Gender.AutoSize = true;
-            this.Gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gender.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Gender.Location = new System.Drawing.Point(984, 279);
+            this.Gender.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gender.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Gender.Location = new System.Drawing.Point(791, 323);
             this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(49, 20);
+            this.Gender.Size = new System.Drawing.Size(49, 21);
             this.Gender.TabIndex = 11;
             this.Gender.Text = "מגדר";
+            this.Gender.Click += new System.EventHandler(this.Gender_Click);
             // 
             // Address
             // 
             this.Address.AutoSize = true;
-            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Address.Location = new System.Drawing.Point(977, 320);
+            this.Address.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Address.Location = new System.Drawing.Point(781, 370);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(58, 20);
+            this.Address.Size = new System.Drawing.Size(59, 21);
             this.Address.TabIndex = 12;
             this.Address.Text = "כתובת";
             this.Address.Click += new System.EventHandler(this.label13_Click);
             // 
             // FirstNameTXT
             // 
-            this.FirstNameTXT.Location = new System.Drawing.Point(631, 96);
+            this.FirstNameTXT.Location = new System.Drawing.Point(490, 135);
             this.FirstNameTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstNameTXT.Name = "FirstNameTXT";
             this.FirstNameTXT.Size = new System.Drawing.Size(192, 22);
@@ -221,7 +233,7 @@
             // 
             // LastNameTXT
             // 
-            this.LastNameTXT.Location = new System.Drawing.Point(631, 144);
+            this.LastNameTXT.Location = new System.Drawing.Point(490, 185);
             this.LastNameTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LastNameTXT.Name = "LastNameTXT";
             this.LastNameTXT.Size = new System.Drawing.Size(192, 22);
@@ -230,7 +242,7 @@
             // 
             // IDTXT
             // 
-            this.IDTXT.Location = new System.Drawing.Point(631, 188);
+            this.IDTXT.Location = new System.Drawing.Point(490, 231);
             this.IDTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDTXT.Name = "IDTXT";
             this.IDTXT.Size = new System.Drawing.Size(192, 22);
@@ -239,7 +251,7 @@
             // 
             // AddressTXT
             // 
-            this.AddressTXT.Location = new System.Drawing.Point(631, 320);
+            this.AddressTXT.Location = new System.Drawing.Point(490, 371);
             this.AddressTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddressTXT.Name = "AddressTXT";
             this.AddressTXT.Size = new System.Drawing.Size(195, 22);
@@ -248,7 +260,7 @@
             // 
             // BirthDatePicker
             // 
-            this.BirthDatePicker.Location = new System.Drawing.Point(613, 232);
+            this.BirthDatePicker.Location = new System.Drawing.Point(472, 278);
             this.BirthDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Size = new System.Drawing.Size(238, 22);
@@ -257,7 +269,7 @@
             // 
             // JoinDatePCK
             // 
-            this.JoinDatePCK.Location = new System.Drawing.Point(68, 188);
+            this.JoinDatePCK.Location = new System.Drawing.Point(16, 231);
             this.JoinDatePCK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JoinDatePCK.Name = "JoinDatePCK";
             this.JoinDatePCK.Size = new System.Drawing.Size(227, 22);
@@ -267,7 +279,7 @@
             // GenderCombo
             // 
             this.GenderCombo.FormattingEnabled = true;
-            this.GenderCombo.Location = new System.Drawing.Point(631, 274);
+            this.GenderCombo.Location = new System.Drawing.Point(490, 320);
             this.GenderCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GenderCombo.Name = "GenderCombo";
             this.GenderCombo.Size = new System.Drawing.Size(195, 24);
@@ -277,7 +289,7 @@
             // MemberTypeCOMBOX
             // 
             this.MemberTypeCOMBOX.FormattingEnabled = true;
-            this.MemberTypeCOMBOX.Location = new System.Drawing.Point(87, 230);
+            this.MemberTypeCOMBOX.Location = new System.Drawing.Point(39, 274);
             this.MemberTypeCOMBOX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MemberTypeCOMBOX.Name = "MemberTypeCOMBOX";
             this.MemberTypeCOMBOX.Size = new System.Drawing.Size(186, 24);
@@ -287,7 +299,7 @@
             // TrainingProccessCombox
             // 
             this.TrainingProccessCombox.FormattingEnabled = true;
-            this.TrainingProccessCombox.Location = new System.Drawing.Point(87, 279);
+            this.TrainingProccessCombox.Location = new System.Drawing.Point(39, 322);
             this.TrainingProccessCombox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TrainingProccessCombox.Name = "TrainingProccessCombox";
             this.TrainingProccessCombox.Size = new System.Drawing.Size(186, 24);
@@ -296,7 +308,7 @@
             // 
             // EmerConTXT
             // 
-            this.EmerConTXT.Location = new System.Drawing.Point(87, 99);
+            this.EmerConTXT.Location = new System.Drawing.Point(39, 129);
             this.EmerConTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmerConTXT.Name = "EmerConTXT";
             this.EmerConTXT.Size = new System.Drawing.Size(186, 22);
@@ -306,7 +318,7 @@
             // PaymentCheckBox
             // 
             this.PaymentCheckBox.AutoSize = true;
-            this.PaymentCheckBox.Location = new System.Drawing.Point(255, 151);
+            this.PaymentCheckBox.Location = new System.Drawing.Point(207, 185);
             this.PaymentCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PaymentCheckBox.Name = "PaymentCheckBox";
             this.PaymentCheckBox.Size = new System.Drawing.Size(18, 17);
@@ -316,7 +328,7 @@
             // 
             // SeniorityNum
             // 
-            this.SeniorityNum.Location = new System.Drawing.Point(87, 324);
+            this.SeniorityNum.Location = new System.Drawing.Point(39, 374);
             this.SeniorityNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SeniorityNum.Name = "SeniorityNum";
             this.SeniorityNum.Size = new System.Drawing.Size(186, 22);
@@ -326,28 +338,30 @@
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Email.Location = new System.Drawing.Point(478, 369);
+            this.Email.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Email.Location = new System.Drawing.Point(379, 417);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(42, 20);
+            this.Email.Size = new System.Drawing.Size(40, 21);
             this.Email.TabIndex = 25;
             this.Email.Text = "מייל";
+            this.Email.Click += new System.EventHandler(this.Email_Click);
             // 
             // Phone
             // 
             this.Phone.AutoSize = true;
-            this.Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.Phone.Location = new System.Drawing.Point(934, 369);
+            this.Phone.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phone.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Phone.Location = new System.Drawing.Point(745, 416);
             this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(101, 20);
+            this.Phone.Size = new System.Drawing.Size(102, 21);
             this.Phone.TabIndex = 26;
             this.Phone.Text = "מספר טלפון";
+            this.Phone.Click += new System.EventHandler(this.Phone_Click);
             // 
             // MailTXT
             // 
-            this.MailTXT.Location = new System.Drawing.Point(87, 369);
+            this.MailTXT.Location = new System.Drawing.Point(39, 419);
             this.MailTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MailTXT.Name = "MailTXT";
             this.MailTXT.Size = new System.Drawing.Size(186, 22);
@@ -356,7 +370,7 @@
             // 
             // PhoneTXT
             // 
-            this.PhoneTXT.Location = new System.Drawing.Point(631, 369);
+            this.PhoneTXT.Location = new System.Drawing.Point(490, 415);
             this.PhoneTXT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PhoneTXT.Name = "PhoneTXT";
             this.PhoneTXT.Size = new System.Drawing.Size(195, 22);
@@ -365,9 +379,9 @@
             // 
             // CreateMemberButton
             // 
-            this.CreateMemberButton.BackColor = System.Drawing.Color.PowderBlue;
-            this.CreateMemberButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMemberButton.Location = new System.Drawing.Point(27, 490);
+            this.CreateMemberButton.BackColor = System.Drawing.Color.Transparent;
+            this.CreateMemberButton.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateMemberButton.Location = new System.Drawing.Point(8, 463);
             this.CreateMemberButton.Name = "CreateMemberButton";
             this.CreateMemberButton.Size = new System.Drawing.Size(172, 33);
             this.CreateMemberButton.TabIndex = 29;
@@ -377,8 +391,9 @@
             // 
             // ReturnFromCreateMember
             // 
-            this.ReturnFromCreateMember.BackColor = System.Drawing.Color.IndianRed;
-            this.ReturnFromCreateMember.Location = new System.Drawing.Point(217, 490);
+            this.ReturnFromCreateMember.BackColor = System.Drawing.Color.Transparent;
+            this.ReturnFromCreateMember.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnFromCreateMember.Location = new System.Drawing.Point(198, 463);
             this.ReturnFromCreateMember.Name = "ReturnFromCreateMember";
             this.ReturnFromCreateMember.Size = new System.Drawing.Size(172, 33);
             this.ReturnFromCreateMember.TabIndex = 30;
@@ -386,12 +401,22 @@
             this.ReturnFromCreateMember.UseVisualStyleBackColor = false;
             this.ReturnFromCreateMember.Click += new System.EventHandler(this.ReturnFromCreateMember_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(127, 101);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
             // NewMemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.ClientSize = new System.Drawing.Size(1054, 534);
+            this.ClientSize = new System.Drawing.Size(882, 503);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ReturnFromCreateMember);
             this.Controls.Add(this.CreateMemberButton);
             this.Controls.Add(this.PhoneTXT);
@@ -423,11 +448,13 @@
             this.Controls.Add(this.Payment);
             this.Controls.Add(this.EmergencyContact);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.RoyalBlue;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NewMemberForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SeniorityNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +493,6 @@
         private System.Windows.Forms.TextBox PhoneTXT;
         private System.Windows.Forms.Button CreateMemberButton;
         private System.Windows.Forms.Button ReturnFromCreateMember;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

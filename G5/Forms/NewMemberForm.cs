@@ -89,6 +89,59 @@ namespace G5
             }
         }
 
-      
+        private void Gender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrivateName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrainingProccess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Email_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Seniority_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Phone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MemberType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void JoinDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Payment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
