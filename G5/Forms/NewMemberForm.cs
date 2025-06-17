@@ -60,7 +60,19 @@ namespace G5
                 return;
             }
 
+            var id = IDTXT.Text.Trim();
 
+            // ←─── ADD THIS BLOCK ────→
+            if (Program.Members.Any(m => m.memberID == id))
+            {
+                MessageBox.Show(
+                    "בוגר עם תעודת זהות זו כבר קיים במערכת.",
+                    "שגיאה",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
 
             try
             {
